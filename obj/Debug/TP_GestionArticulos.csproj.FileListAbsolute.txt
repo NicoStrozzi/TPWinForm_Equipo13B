@@ -8,3 +8,4 @@ D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_Gestio
 D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.csproj.CoreCompileInputs.cache
 D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.exe
 D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.pdb
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.exe.config
