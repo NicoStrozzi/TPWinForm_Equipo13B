@@ -1,0 +1,10 @@
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\bin\Debug\TP_GestionArticulos.exe.config
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\bin\Debug\TP_GestionArticulos.exe
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\bin\Debug\TP_GestionArticulos.pdb
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.csproj.AssemblyReference.cache
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.Form1.resources
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.Properties.Resources.resources
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.csproj.GenerateResource.cache
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.csproj.CoreCompileInputs.cache
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.exe
+D:\Carrera programacion\Programacion 3\TP\TP_GestionArticulos.WinForms\TP_GestionArticulos\obj\Debug\TP_GestionArticulos.pdb
