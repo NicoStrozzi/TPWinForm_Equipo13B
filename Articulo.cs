@@ -12,9 +12,19 @@ namespace TP_GestionArticulos
         public string codigo { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
-        public string marca { get; set; }
+        public Marca marca { get; set; }
         public Categoria categoria { get; set; }
-        public float precio { get; set; }
+        public decimal precio
+        {
+            get { return precio; }
+            set
+            {
+                if (precio > 0)
+                    precio = value;
+                else
+                    precio = 0;
+            }
+        }
         public ImagenArticulo imagen { get; set; }
         public int stock { get; set; }
         public DateTime fechaAlta { get; set; }

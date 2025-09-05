@@ -13,7 +13,7 @@ namespace TP_GestionArticulos
         public string url { get; set; }
         public int orden { get; set; }
         public bool esPrincipal { get; set; }
-        public string descrpcion { get; set; }
+        public string descripcion { get; set; }
         public string formato { get; set; }
         public int tamanio { get; set; }
         public DateTime fechaSubida { get; set; }
