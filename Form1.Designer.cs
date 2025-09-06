@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.lblCampo = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -41,9 +44,6 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnDescargar = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
-            this.lblCampo = new System.Windows.Forms.Label();
-            this.lblCriterio = new System.Windows.Forms.Label();
-            this.lblValor = new System.Windows.Forms.Label();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -67,6 +67,35 @@
             this.gbFiltros.Text = "Filtros";
             this.gbFiltros.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(272, 27);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(31, 13);
+            this.lblValor.TabIndex = 7;
+            this.lblValor.Text = "Valor";
+            this.lblValor.Click += new System.EventHandler(this.lblValor_Click);
+            // 
+            // lblCriterio
+            // 
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Location = new System.Drawing.Point(136, 27);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(39, 13);
+            this.lblCriterio.TabIndex = 6;
+            this.lblCriterio.Text = "Criterio";
+            // 
+            // lblCampo
+            // 
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Location = new System.Drawing.Point(6, 27);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(40, 13);
+            this.lblCampo.TabIndex = 5;
+            this.lblCampo.Text = "Campo";
+            this.lblCampo.Click += new System.EventHandler(this.label1_Click);
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(496, 41);
@@ -78,7 +107,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(403, 40);
+            this.btnBuscar.Location = new System.Drawing.Point(396, 40);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 3;
@@ -124,7 +153,7 @@
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 127);
+            this.dgvArticulos.Location = new System.Drawing.Point(18, 127);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -184,35 +213,6 @@
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagen.TabIndex = 7;
             this.pbImagen.TabStop = false;
-            // 
-            // lblCampo
-            // 
-            this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(6, 27);
-            this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(40, 13);
-            this.lblCampo.TabIndex = 5;
-            this.lblCampo.Text = "Campo";
-            this.lblCampo.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblCriterio
-            // 
-            this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(136, 27);
-            this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(39, 13);
-            this.lblCriterio.TabIndex = 6;
-            this.lblCriterio.Text = "Criterio";
-            // 
-            // lblValor
-            // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(272, 27);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(31, 13);
-            this.lblValor.TabIndex = 7;
-            this.lblValor.Text = "Valor";
-            this.lblValor.Click += new System.EventHandler(this.lblValor_Click);
             // 
             // Form1
             // 
