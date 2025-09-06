@@ -226,7 +226,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Name = "FormDetalleArticulo";
-            this.Text = "FormDetalleArticulo";
+            this.Text = "Detalle de Artículo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
