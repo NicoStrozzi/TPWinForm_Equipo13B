@@ -44,6 +44,7 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnDescargar = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -215,11 +216,21 @@
             this.pbImagen.TabIndex = 7;
             this.pbImagen.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(241, 381);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 39);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.btnDescargar);
             this.Controls.Add(this.btnDetalle);
@@ -258,6 +269,7 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.Label lblCampo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

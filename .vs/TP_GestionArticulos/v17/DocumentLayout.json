@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\GONZO\\Desktop\\PROGRAMACION 3\\TP WinForm\\TP WinForm GRUPO 13\\TP WinForm\\TP Gestion de articulos\\TP_GestionArticulos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1D98E6-9E63-4265-8EE0-7DD66E9CF478}|TP_GestionArticulos.csproj|c:\\users\\gonzo\\desktop\\programacion 3\\tp winform\\tp winform grupo 13\\tp winform\\tp gestion de articulos\\tp_gestionarticulos\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1D98E6-9E63-4265-8EE0-7DD66E9CF478}|TP_GestionArticulos.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1D98E6-9E63-4265-8EE0-7DD66E9CF478}|TP_GestionArticulos.csproj|c:\\users\\gonzo\\desktop\\programacion 3\\tp winform\\tp winform grupo 13\\tp winform\\tp gestion de articulos\\tp_gestionarticulos\\formagregararticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1D98E6-9E63-4265-8EE0-7DD66E9CF478}|TP_GestionArticulos.csproj|solutionrelative:formagregararticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\GONZO\\Desktop\\PROGRAMACION 3\\TP WinForm\\TP WinForm GRUPO 13\\TP WinForm\\TP Gestion de articulos\\TP_GestionArticulos\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\GONZO\\Desktop\\PROGRAMACION 3\\TP WinForm\\TP WinForm GRUPO 13\\TP WinForm\\TP Gestion de articulos\\TP_GestionArticulos\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T22:08:33.962Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormAgregarArticulo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\GONZO\\Desktop\\PROGRAMACION 3\\TP WinForm\\TP WinForm GRUPO 13\\TP WinForm\\TP Gestion de articulos\\TP_GestionArticulos\\FormAgregarArticulo.cs",
+              "RelativeDocumentMoniker": "FormAgregarArticulo.cs",
+              "ToolTip": "C:\\Users\\GONZO\\Desktop\\PROGRAMACION 3\\TP WinForm\\TP WinForm GRUPO 13\\TP WinForm\\TP Gestion de articulos\\TP_GestionArticulos\\FormAgregarArticulo.cs [Design]",
+              "RelativeToolTip": "FormAgregarArticulo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T22:08:30.244Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
