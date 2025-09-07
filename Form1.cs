@@ -39,7 +39,15 @@ namespace TP_GestionArticulos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            FormAgregarArticulo AgregarArticulo = new FormAgregarArticulo();
+            AgregarArticulo.Show();
+            
+        }
 
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            FormDetalleArticulo DetalleArticulo = new FormDetalleArticulo();
+            DetalleArticulo.Show();
         }
     }
 }
