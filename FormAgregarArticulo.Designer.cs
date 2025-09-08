@@ -43,6 +43,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.gpImagenes = new System.Windows.Forms.GroupBox();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -94,7 +96,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(101, 210);
+            this.lblPrecio.Location = new System.Drawing.Point(89, 210);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 5;
@@ -166,18 +168,38 @@
             // 
             // gpImagenes
             // 
-            this.gpImagenes.Location = new System.Drawing.Point(78, 257);
+            this.gpImagenes.Location = new System.Drawing.Point(78, 236);
             this.gpImagenes.Name = "gpImagenes";
             this.gpImagenes.Size = new System.Drawing.Size(200, 100);
             this.gpImagenes.TabIndex = 14;
             this.gpImagenes.TabStop = false;
             this.gpImagenes.Text = "Imagenes";
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Location = new System.Drawing.Point(159, 342);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitar.TabIndex = 33;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(78, 342);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.TabIndex = 32;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            // 
             // FormAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnQuitar);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.gpImagenes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -218,5 +240,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox gpImagenes;
+        private System.Windows.Forms.Button btnQuitar;
+        private System.Windows.Forms.Button btnCargar;
     }
 }

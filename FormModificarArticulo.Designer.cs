@@ -43,6 +43,8 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gpImagenes
@@ -56,7 +58,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(488, 378);
+            this.btnCancelar.Location = new System.Drawing.Point(482, 395);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 28;
@@ -65,7 +67,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(384, 378);
+            this.btnModificar.Location = new System.Drawing.Point(384, 395);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 27;
@@ -171,11 +173,32 @@
             this.lblCodigo.TabIndex = 15;
             this.lblCodigo.Text = "Codigo";
             // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(236, 349);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.TabIndex = 30;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Location = new System.Drawing.Point(317, 349);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitar.TabIndex = 31;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            // 
             // FormModificarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnQuitar);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.gpImagenes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnModificar);
@@ -215,5 +238,7 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button btnQuitar;
     }
 }
