@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using dominio;
 
 namespace TP_GestionArticulos
 {
@@ -28,6 +29,11 @@ namespace TP_GestionArticulos
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormAgregarArticulo_Load(object sender, EventArgs e)
         {
 
         }

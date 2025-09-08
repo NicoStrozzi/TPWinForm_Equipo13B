@@ -34,19 +34,16 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl1de1 = new System.Windows.Forms.Label();
-            this.btnIzquierda = new System.Windows.Forms.Button();
             this.btnDerecha = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.btnIzquierda = new System.Windows.Forms.Button();
+            this.lbl1de1 = new System.Windows.Forms.Label();
+            this.lblMostrarCodigo = new System.Windows.Forms.Label();
+            this.lblMostrarNombre = new System.Windows.Forms.Label();
+            this.lblMostrarDescrpcion = new System.Windows.Forms.Label();
+            this.lblMostrarMarca = new System.Windows.Forms.Label();
+            this.lblMostrarCategoria = new System.Windows.Forms.Label();
+            this.lblMostrarPrecio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -104,55 +101,8 @@
             this.lblPrecio.TabIndex = 5;
             this.lblPrecio.Text = "Precio";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(247, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(247, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(247, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(247, 242);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(247, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(247, 196);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 11;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnDerecha);
-            this.groupBox1.Controls.Add(this.btnIzquierda);
-            this.groupBox1.Controls.Add(this.lbl1de1);
             this.groupBox1.Location = new System.Drawing.Point(182, 282);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(320, 100);
@@ -160,65 +110,105 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // lbl1de1
-            // 
-            this.lbl1de1.AutoSize = true;
-            this.lbl1de1.Location = new System.Drawing.Point(128, 76);
-            this.lbl1de1.Name = "lbl1de1";
-            this.lbl1de1.Size = new System.Drawing.Size(37, 13);
-            this.lbl1de1.TabIndex = 13;
-            this.lbl1de1.Text = "1 de 1";
-            // 
-            // btnIzquierda
-            // 
-            this.btnIzquierda.Location = new System.Drawing.Point(47, 71);
-            this.btnIzquierda.Name = "btnIzquierda";
-            this.btnIzquierda.Size = new System.Drawing.Size(75, 23);
-            this.btnIzquierda.TabIndex = 14;
-            this.btnIzquierda.Text = "<";
-            this.btnIzquierda.UseVisualStyleBackColor = true;
-            // 
             // btnDerecha
             // 
-            this.btnDerecha.Location = new System.Drawing.Point(174, 71);
+            this.btnDerecha.Location = new System.Drawing.Point(332, 388);
             this.btnDerecha.Name = "btnDerecha";
             this.btnDerecha.Size = new System.Drawing.Size(75, 23);
             this.btnDerecha.TabIndex = 15;
             this.btnDerecha.Text = ">";
             this.btnDerecha.UseVisualStyleBackColor = true;
             // 
-            // btnGuardar
+            // btnIzquierda
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(292, 403);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 13;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnIzquierda.Location = new System.Drawing.Point(208, 388);
+            this.btnIzquierda.Name = "btnIzquierda";
+            this.btnIzquierda.Size = new System.Drawing.Size(75, 23);
+            this.btnIzquierda.TabIndex = 14;
+            this.btnIzquierda.Text = "<";
+            this.btnIzquierda.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // lbl1de1
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(383, 403);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 14;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.lbl1de1.AutoSize = true;
+            this.lbl1de1.Location = new System.Drawing.Point(289, 393);
+            this.lbl1de1.Name = "lbl1de1";
+            this.lbl1de1.Size = new System.Drawing.Size(37, 13);
+            this.lbl1de1.TabIndex = 13;
+            this.lbl1de1.Text = "1 de 1";
+            this.lbl1de1.Click += new System.EventHandler(this.lbl1de1_Click);
+            // 
+            // lblMostrarCodigo
+            // 
+            this.lblMostrarCodigo.AutoSize = true;
+            this.lblMostrarCodigo.Location = new System.Drawing.Point(264, 84);
+            this.lblMostrarCodigo.Name = "lblMostrarCodigo";
+            this.lblMostrarCodigo.Size = new System.Drawing.Size(23, 13);
+            this.lblMostrarCodigo.TabIndex = 13;
+            this.lblMostrarCodigo.Text = "\"  \"";
+            // 
+            // lblMostrarNombre
+            // 
+            this.lblMostrarNombre.AutoSize = true;
+            this.lblMostrarNombre.Location = new System.Drawing.Point(264, 111);
+            this.lblMostrarNombre.Name = "lblMostrarNombre";
+            this.lblMostrarNombre.Size = new System.Drawing.Size(23, 13);
+            this.lblMostrarNombre.TabIndex = 14;
+            this.lblMostrarNombre.Text = "\"  \"";
+            // 
+            // lblMostrarDescrpcion
+            // 
+            this.lblMostrarDescrpcion.AutoSize = true;
+            this.lblMostrarDescrpcion.Location = new System.Drawing.Point(264, 139);
+            this.lblMostrarDescrpcion.Name = "lblMostrarDescrpcion";
+            this.lblMostrarDescrpcion.Size = new System.Drawing.Size(23, 13);
+            this.lblMostrarDescrpcion.TabIndex = 15;
+            this.lblMostrarDescrpcion.Text = "\"  \"";
+            this.lblMostrarDescrpcion.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // lblMostrarMarca
+            // 
+            this.lblMostrarMarca.AutoSize = true;
+            this.lblMostrarMarca.Location = new System.Drawing.Point(264, 172);
+            this.lblMostrarMarca.Name = "lblMostrarMarca";
+            this.lblMostrarMarca.Size = new System.Drawing.Size(23, 13);
+            this.lblMostrarMarca.TabIndex = 16;
+            this.lblMostrarMarca.Text = "\"  \"";
+            this.lblMostrarMarca.Click += new System.EventHandler(this.lblMostrarMarca_Click);
+            // 
+            // lblMostrarCategoria
+            // 
+            this.lblMostrarCategoria.AutoSize = true;
+            this.lblMostrarCategoria.Location = new System.Drawing.Point(264, 205);
+            this.lblMostrarCategoria.Name = "lblMostrarCategoria";
+            this.lblMostrarCategoria.Size = new System.Drawing.Size(23, 13);
+            this.lblMostrarCategoria.TabIndex = 17;
+            this.lblMostrarCategoria.Text = "\"  \"";
+            // 
+            // lblMostrarPrecio
+            // 
+            this.lblMostrarPrecio.AutoSize = true;
+            this.lblMostrarPrecio.Location = new System.Drawing.Point(264, 242);
+            this.lblMostrarPrecio.Name = "lblMostrarPrecio";
+            this.lblMostrarPrecio.Size = new System.Drawing.Size(23, 13);
+            this.lblMostrarPrecio.TabIndex = 18;
+            this.lblMostrarPrecio.Text = "\"  \"";
             // 
             // FormDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
+            this.ClientSize = new System.Drawing.Size(651, 450);
+            this.Controls.Add(this.btnDerecha);
+            this.Controls.Add(this.lblMostrarPrecio);
+            this.Controls.Add(this.lbl1de1);
+            this.Controls.Add(this.btnIzquierda);
+            this.Controls.Add(this.lblMostrarCategoria);
+            this.Controls.Add(this.lblMostrarMarca);
+            this.Controls.Add(this.lblMostrarDescrpcion);
+            this.Controls.Add(this.lblMostrarNombre);
+            this.Controls.Add(this.lblMostrarCodigo);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblMarca);
@@ -227,8 +217,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "FormDetalleArticulo";
             this.Text = "Detalle de Artículo";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormDetalleArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,17 +231,15 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDerecha;
         private System.Windows.Forms.Button btnIzquierda;
         private System.Windows.Forms.Label lbl1de1;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblMostrarCodigo;
+        private System.Windows.Forms.Label lblMostrarNombre;
+        private System.Windows.Forms.Label lblMostrarDescrpcion;
+        private System.Windows.Forms.Label lblMostrarMarca;
+        private System.Windows.Forms.Label lblMostrarCategoria;
+        private System.Windows.Forms.Label lblMostrarPrecio;
     }
 }

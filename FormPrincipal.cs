@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 
 namespace TP_GestionArticulos
 {
@@ -48,6 +49,17 @@ namespace TP_GestionArticulos
         {
             FormDetalleArticulo DetalleArticulo = new FormDetalleArticulo();
             DetalleArticulo.Show();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            FormModificarArticulo ModificarArticulo = new FormModificarArticulo();
+            ModificarArticulo.Show();
         }
     }
 }

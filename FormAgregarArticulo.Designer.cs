@@ -195,6 +195,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "FormAgregarArticulo";
             this.Text = "Nuevo Artículo";
+            this.Load += new System.EventHandler(this.FormAgregarArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
