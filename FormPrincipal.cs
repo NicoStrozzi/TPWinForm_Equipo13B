@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
+using negocio;
 
 namespace TP_GestionArticulos
 {
@@ -53,13 +53,20 @@ namespace TP_GestionArticulos
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            DatoArticulo negocio = new DatoArticulo();
+            dgvArticulos.DataSource = negocio.listar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             FormModificarArticulo ModificarArticulo = new FormModificarArticulo();
             ModificarArticulo.Show();
+        }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //DatoArticulo negocio = new DatoArticulo();
+            //dgvArticulos.DataSource = negocio.listar();
         }
     }
 }
