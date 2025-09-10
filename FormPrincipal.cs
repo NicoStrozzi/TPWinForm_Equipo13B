@@ -40,6 +40,7 @@ namespace TP_GestionArticulos
             DatoArticulo negocio = new DatoArticulo();
             listaArticulos = negocio.listar();
             dgvArticulos.DataSource = listaArticulos;
+            dgvArticulos.Columns["Imagenes"].Visible = false;
             cargarImagen(listaArticulos[0].Imagenes);
         }
 

@@ -15,19 +15,19 @@ namespace dominio
 
         public string Imagenes { get; set; }
 
-        //public List<Marca> marcas { get; set; }
-        //public List<Categoria> categorias { get; set; }
-        //public decimal precio
-        //{
-        //    get { return precio; }
-        //    set
-        //    {
-        //        if (precio > 0)
-        //            precio = value;
-        //        else
-        //            precio = 0;
-        //    }
-        //}
+        public Marca marca { get; set; }
+        public Categoria categoria { get; set; }
+        /*public decimal precio
+        {
+            get { return precio; }
+            set
+            {
+                if (precio > 0)
+                    precio = value;
+                else
+                    precio = 0;
+            }
+        }*/
         //public List<ImagenArticulo> imagenes { get; set; }
         //public int stock { get; set; }
         //public DateTime fechaAlta { get; set; }

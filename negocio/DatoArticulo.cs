@@ -1,10 +1,11 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using dominio;
-using System.Data.SqlClient;
 
 namespace negocio
 {
@@ -24,9 +25,12 @@ namespace negocio
                 comando.CommandType = System.Data.CommandType.Text;
                 
                 comando.Connection = conexion;
-                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, I.ImagenUrl\r\n" +
-                                      "FROM ARTICULOS A\r\n" +
-                                      "LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id\r\n";
+                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, I.ImagenUrl, " +
+    "       M.Descripcion AS Marca, C.Descripcion AS Categoria " +
+    "FROM ARTICULOS A " +
+    "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
+    "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
+    "LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id;";
                 
 
                 conexion.Open();
@@ -40,7 +44,10 @@ namespace negocio
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Imagenes = (string)lector["ImagenUrl"];
-
+                    aux.marca = new Marca();
+                    aux.marca.descripcion = (string)lector["Descripcion"];
+                    aux.categoria=new Categoria();
+                    aux.categoria.descripcion = (string)lector["Descripcion"];
                     lista.Add(aux);
                 }
 
