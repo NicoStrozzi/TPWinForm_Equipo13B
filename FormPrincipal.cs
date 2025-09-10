@@ -7,36 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 using negocio;
 
 namespace TP_GestionArticulos
 {
     public partial class FormPrincipal : Form
     {
+        private List<Articulo> listaArticulos;
         public FormPrincipal()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblValor_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -54,7 +38,9 @@ namespace TP_GestionArticulos
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             DatoArticulo negocio = new DatoArticulo();
-            dgvArticulos.DataSource = negocio.listar();
+            listaArticulos = negocio.listar();
+            dgvArticulos.DataSource = listaArticulos;
+            pbImagen.Load(listaArticulos[0].Imagenes);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -67,6 +53,18 @@ namespace TP_GestionArticulos
         {
             //DatoArticulo negocio = new DatoArticulo();
             //dgvArticulos.DataSource = negocio.listar();
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+           // Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+           // pbImagen.Load(seleccionado.Imagenes);
+        }
+
+        private void dgvArticulos_Click(object sender, EventArgs e)
+        {
+            // Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            // pbImagen.Load(seleccionado.Imagenes);
         }
     }
 }

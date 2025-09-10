@@ -24,7 +24,9 @@ namespace negocio
                 comando.CommandType = System.Data.CommandType.Text;
                 
                 comando.Connection = conexion;
-                comando.CommandText = "Select Id, Codigo, Nombre, Descripcion From ARTICULOS";
+                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, I.ImagenUrl\r\n" +
+                                      "FROM ARTICULOS A\r\n" +
+                                      "LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id\r\n";
                 
 
                 conexion.Open();
@@ -37,6 +39,7 @@ namespace negocio
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
+                    aux.Imagenes = (string)lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
