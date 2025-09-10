@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="dominio">
-      <HintPath>..\dominio\bin\Debug\dominio.dll</HintPath>
+      <HintPath>..\dominio\obj\Debug\dominio.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

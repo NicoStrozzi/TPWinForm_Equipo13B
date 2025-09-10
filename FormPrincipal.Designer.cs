@@ -150,14 +150,14 @@
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.Window;
-            this.dgvArticulos.Location = new System.Drawing.Point(10, 131);
+            this.dgvArticulos.Location = new System.Drawing.Point(10, 129);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(643, 158);
             this.dgvArticulos.TabIndex = 1;
-            this.dgvArticulos.Click += new System.EventHandler(this.dgvArticulos_Click);
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged_1);
             // 
             // btnAgregar
             // 

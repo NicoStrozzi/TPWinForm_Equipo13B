@@ -40,7 +40,7 @@ namespace TP_GestionArticulos
             DatoArticulo negocio = new DatoArticulo();
             listaArticulos = negocio.listar();
             dgvArticulos.DataSource = listaArticulos;
-            pbImagen.Load(listaArticulos[0].Imagenes);
+            cargarImagen(listaArticulos[0].Imagenes);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -49,22 +49,24 @@ namespace TP_GestionArticulos
             ModificarArticulo.Show();
         }
 
-        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvArticulos_SelectionChanged_1(object sender, EventArgs e)
         {
-            //DatoArticulo negocio = new DatoArticulo();
-            //dgvArticulos.DataSource = negocio.listar();
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Imagenes);
         }
 
-        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        private void cargarImagen(string imagenes)
         {
-           // Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-           // pbImagen.Load(seleccionado.Imagenes);
-        }
+            try
+            {
+                pbImagen.Load(imagenes);
+            }
+            catch (Exception ex)
+            {
 
-        private void dgvArticulos_Click(object sender, EventArgs e)
-        {
-            // Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            // pbImagen.Load(seleccionado.Imagenes);
+                pbImagen.Load("https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=");
+            }
+            
         }
     }
 }
