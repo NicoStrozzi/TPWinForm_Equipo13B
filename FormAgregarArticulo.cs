@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using dominio;
+using dominio;
+using negocio;
 
 namespace TP_GestionArticulos
 {
@@ -36,6 +37,30 @@ namespace TP_GestionArticulos
         private void FormAgregarArticulo_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Articulo nuevoArt = new Articulo();
+            DatoArticulo negocio= new DatoArticulo();
+            try
+            {
+                nuevoArt.Codigo=txtCodigo.Text;
+                nuevoArt.Nombre=txtNombre.Text;
+                nuevoArt.Descripcion=txtDescripcion.Text;
+                nuevoArt.marca = (Marca)cbxMarca.SelectedItem;
+                nuevoArt.categoria = (Categoria)cbxCategoria.SelectedItem;
+                nuevoArt.precio=decimal.Parse(txtPrecio.Text);
+
+                negocio.agregar(nuevoArt);
+                MessageBox.Show("Agregado exitosamente");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

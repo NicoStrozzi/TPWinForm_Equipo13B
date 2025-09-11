@@ -66,5 +66,24 @@ namespace negocio
 
         }
 
+        public void agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.ejecutarAccion();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarconexion();
+            }
+        }
+
     }
 }

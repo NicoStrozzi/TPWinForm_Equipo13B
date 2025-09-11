@@ -34,10 +34,7 @@ namespace dominio
         //public DateTime fechaAlta { get; set; }
         //public bool activo { get; set; }
 
-    public void agregarArticulo(Articulo nuevo)
-        {
-
-        }
+    
 
     }
 }
