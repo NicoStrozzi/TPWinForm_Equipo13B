@@ -13,7 +13,10 @@ namespace dominio
         public string nombre { get; set; }
         public string descripcion { get; set; }
 
-        public string paisOrigen { get; set; }
-        public string logoUrl { get; set; }
+
+        public override string ToString()
+        {
+            return descripcion;
+        }
     }
 }

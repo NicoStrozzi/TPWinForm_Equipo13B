@@ -25,13 +25,15 @@ namespace negocio
                 comando.CommandType = System.Data.CommandType.Text;
                 
                 comando.Connection = conexion;
-                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, I.ImagenUrl, " +
-    "       M.Descripcion AS Marca, C.Descripcion AS Categoria " +
-    "FROM ARTICULOS A " +
-    "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
-    "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
-    "LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id;";
-                
+                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, " +
+                                 "       ISNULL(I.ImagenUrl,'')    AS ImagenUrl, " +
+                                 "       ISNULL(M.Descripcion,'')  AS Marca, " +
+                                 "       ISNULL(C.Descripcion,'')  AS Categoria " +
+                                 "FROM ARTICULOS A " +
+                                 "LEFT JOIN MARCAS      M ON A.IdMarca     = M.Id " +
+                                 "LEFT JOIN CATEGORIAS  C ON A.IdCategoria = C.Id " +
+                                 "LEFT JOIN IMAGENES    I ON I.IdArticulo  = A.Id;";
+
 
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -45,9 +47,9 @@ namespace negocio
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Imagenes = (string)lector["ImagenUrl"];
                     aux.marca = new Marca();
-                    aux.marca.descripcion = (string)lector["Descripcion"];
+                    aux.marca.descripcion = (string)lector["Marca"];
                     aux.categoria=new Categoria();
-                    aux.categoria.descripcion = (string)lector["Descripcion"];
+                    aux.categoria.descripcion = (string)lector["Categoria"];
                     lista.Add(aux);
                 }
 
