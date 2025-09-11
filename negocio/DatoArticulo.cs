@@ -25,7 +25,7 @@ namespace negocio
                 comando.CommandType = System.Data.CommandType.Text;
                 
                 comando.Connection = conexion;
-                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, " +
+                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, " +
                                  "       ISNULL(I.ImagenUrl,'')    AS ImagenUrl, " +
                                  "       ISNULL(M.Descripcion,'')  AS Marca, " +
                                  "       ISNULL(C.Descripcion,'')  AS Categoria " +
@@ -50,6 +50,7 @@ namespace negocio
                     aux.marca.descripcion = (string)lector["Marca"];
                     aux.categoria=new Categoria();
                     aux.categoria.descripcion = (string)lector["Categoria"];
+                    aux.precio = (decimal)lector["Precio"];
                     lista.Add(aux);
                 }
 

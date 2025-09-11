@@ -30,7 +30,7 @@ namespace TP_GestionArticulos
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void FormAgregarArticulo_Load(object sender, EventArgs e)

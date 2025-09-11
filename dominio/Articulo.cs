@@ -17,23 +17,27 @@ namespace dominio
 
         public Marca marca { get; set; }
         public Categoria categoria { get; set; }
-        /*public decimal precio
+        public decimal precio
         {
-            get { return precio; }
-            set
-            {
-                if (precio > 0)
-                    precio = value;
-                else
-                    precio = 0;
-            }
-        }*/
+            get; set;
+            /* get { return precio; }
+             set
+             {
+                 if (precio > 0)
+                     precio = value;
+                 else
+                     precio = 0;
+             }*/
+        }
         //public List<ImagenArticulo> imagenes { get; set; }
         //public int stock { get; set; }
         //public DateTime fechaAlta { get; set; }
         //public bool activo { get; set; }
 
+    public void agregarArticulo(Articulo nuevo)
+        {
 
+        }
 
     }
 }
