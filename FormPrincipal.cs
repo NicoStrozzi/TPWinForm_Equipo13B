@@ -37,7 +37,15 @@ namespace TP_GestionArticulos
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             cargar();
+=======
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            listaArticulos = negocio.listar();
+            dgvArticulos.DataSource = listaArticulos;
+            dgvArticulos.Columns["Imagenes"].Visible = false;
+            cargarImagen(listaArticulos[0].Imagenes);
+>>>>>>> f18c49d4dbbc71ffa207739b512945c7a7fa4cbe
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

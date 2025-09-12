@@ -53,7 +53,7 @@ namespace TP_GestionArticulos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Articulo nuevoArt = new Articulo();
-            DatoArticulo negocio= new DatoArticulo();
+            ArticuloNegocio negocio= new ArticuloNegocio();
             try
             {
                 nuevoArt.Codigo=txtCodigo.Text;
