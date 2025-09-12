@@ -90,5 +90,33 @@ namespace negocio
             }
         }
 
+        public void modificar(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                // Solo Pongo algunos para probar hasta encontrar la forma de modificar todos
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, Precio = @Precio WHERE Id = @Id");
+
+                datos.setearParametros("@Codigo", art.Codigo);
+                datos.setearParametros("@Nombre", art.Nombre);
+                datos.setearParametros("@Descripcion", art.Descripcion);
+                datos.setearParametros("@Precio", art.precio);
+                datos.setearParametros("@Id", art.Id);
+
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            { 
+                datos.cerrarconexion(); 
+            }
+        }
     }
 }

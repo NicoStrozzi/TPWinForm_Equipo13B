@@ -25,7 +25,7 @@ namespace TP_GestionArticulos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FormAgregarArticulo AgregarArticulo = new FormAgregarArticulo();
-            AgregarArticulo.Show();
+            AgregarArticulo.ShowDialog();
             cargar();            
         }
 
@@ -37,22 +37,27 @@ namespace TP_GestionArticulos
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             cargar();
-=======
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
             dgvArticulos.DataSource = listaArticulos;
             dgvArticulos.Columns["Imagenes"].Visible = false;
             cargarImagen(listaArticulos[0].Imagenes);
->>>>>>> f18c49d4dbbc71ffa207739b512945c7a7fa4cbe
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            FormModificarArticulo ModificarArticulo = new FormModificarArticulo();
-            ModificarArticulo.Show();
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            FormAgregarArticulo modificar = new FormAgregarArticulo(seleccionado);
+            modificar.ShowDialog();
+            cargar();
         }
+        
 
         private void dgvArticulos_SelectionChanged_1(object sender, EventArgs e)
         {
@@ -62,7 +67,7 @@ namespace TP_GestionArticulos
 
         private void cargar()
         {
-            DatoArticulo negocio = new DatoArticulo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
             dgvArticulos.DataSource = listaArticulos;
             dgvArticulos.Columns["Imagenes"].Visible = false;

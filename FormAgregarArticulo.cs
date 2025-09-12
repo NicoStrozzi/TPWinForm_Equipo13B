@@ -14,9 +14,16 @@ namespace TP_GestionArticulos
 {
     public partial class FormAgregarArticulo : Form
     {
+        private Articulo articulo = null;
         public FormAgregarArticulo()
         {
             InitializeComponent();
+        }
+        public FormAgregarArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Modificar Artículo";
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -42,6 +49,20 @@ namespace TP_GestionArticulos
             {
                 cbxMarca.DataSource = marcaNegocio.Listar();
                 cbxCategoria.DataSource=categoriaNegocio.Listar();
+
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+
+                    //imagen? cargarImagen(listaArticulos[0].Imagenes);
+
+                    cbxMarca.Text = articulo.marca.ToString();
+                    cbxCategoria.Text = articulo.categoria.ToString();
+                    txtPrecio.Text = articulo.precio.ToString();
+
+                }
             }
             catch (Exception ex)
             {
@@ -52,19 +73,32 @@ namespace TP_GestionArticulos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Articulo nuevoArt = new Articulo();
+            
             ArticuloNegocio negocio= new ArticuloNegocio();
             try
             {
-                nuevoArt.Codigo=txtCodigo.Text;
-                nuevoArt.Nombre=txtNombre.Text;
-                nuevoArt.Descripcion=txtDescripcion.Text;
-                nuevoArt.marca = (Marca)cbxMarca.SelectedItem;
-                nuevoArt.categoria = (Categoria)cbxCategoria.SelectedItem;
-                nuevoArt.precio=decimal.Parse(txtPrecio.Text);
+                if(articulo == null)
+                    articulo = new Articulo();
 
-                negocio.agregar(nuevoArt);
-                MessageBox.Show("Agregado exitosamente");
+                articulo.Codigo=txtCodigo.Text;
+                articulo.Nombre=txtNombre.Text;
+                articulo.Descripcion=txtDescripcion.Text;
+                articulo.marca = (Marca)cbxMarca.SelectedItem;
+                articulo.categoria = (Categoria)cbxCategoria.SelectedItem;
+                articulo.precio=decimal.Parse(txtPrecio.Text);
+
+                if(articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+
+
                 Close();
             }
             catch (Exception ex)
