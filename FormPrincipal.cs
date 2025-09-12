@@ -26,7 +26,7 @@ namespace TP_GestionArticulos
         {
             FormAgregarArticulo AgregarArticulo = new FormAgregarArticulo();
             AgregarArticulo.Show();
-            
+            cargar();            
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -37,11 +37,7 @@ namespace TP_GestionArticulos
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            DatoArticulo negocio = new DatoArticulo();
-            listaArticulos = negocio.listar();
-            dgvArticulos.DataSource = listaArticulos;
-            dgvArticulos.Columns["Imagenes"].Visible = false;
-            cargarImagen(listaArticulos[0].Imagenes);
+            cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -56,6 +52,14 @@ namespace TP_GestionArticulos
             cargarImagen(seleccionado.Imagenes);
         }
 
+        private void cargar()
+        {
+            DatoArticulo negocio = new DatoArticulo();
+            listaArticulos = negocio.listar();
+            dgvArticulos.DataSource = listaArticulos;
+            dgvArticulos.Columns["Imagenes"].Visible = false;
+            cargarImagen(listaArticulos[0].Imagenes);
+        }
         private void cargarImagen(string imagenes)
         {
             try

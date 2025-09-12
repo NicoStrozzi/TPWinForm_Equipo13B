@@ -73,5 +73,10 @@ namespace TP_GestionArticulos
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
