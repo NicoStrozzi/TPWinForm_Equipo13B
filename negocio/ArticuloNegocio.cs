@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace negocio
 {
-    public class DatoArticulo
+    public class ArticuloNegocio
     {
         public List<Articulo> listar()
         {

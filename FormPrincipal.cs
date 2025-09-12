@@ -37,7 +37,7 @@ namespace TP_GestionArticulos
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            DatoArticulo negocio = new DatoArticulo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
             dgvArticulos.DataSource = listaArticulos;
             dgvArticulos.Columns["Imagenes"].Visible = false;
