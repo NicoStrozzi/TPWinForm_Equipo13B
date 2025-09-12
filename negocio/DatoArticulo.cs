@@ -69,10 +69,15 @@ namespace negocio
         public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.ejecutarAccion();
             try
             {
-
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
+                 "VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" +
+                nuevo.Descripcion + "', " + nuevo.precio +
+                ", @IdMarca, @IdCategoria)");
+                datos.setearParametros("@IdMarca",nuevo.marca.id);
+                datos.setearParametros("@IdCategoria", nuevo.categoria.id);
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {

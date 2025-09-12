@@ -36,7 +36,18 @@ namespace TP_GestionArticulos
 
         private void FormAgregarArticulo_Load(object sender, EventArgs e)
         {
+            MarcaNegocio marcaNegocio= new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio= new CategoriaNegocio();
+            try
+            {
+                cbxMarca.DataSource = marcaNegocio.Listar();
+                cbxCategoria.DataSource=categoriaNegocio.Listar();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -54,7 +65,7 @@ namespace TP_GestionArticulos
 
                 negocio.agregar(nuevoArt);
                 MessageBox.Show("Agregado exitosamente");
-
+                Close();
             }
             catch (Exception ex)
             {
