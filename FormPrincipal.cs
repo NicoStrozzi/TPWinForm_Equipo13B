@@ -31,7 +31,9 @@ namespace TP_GestionArticulos
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            FormDetalleArticulo DetalleArticulo = new FormDetalleArticulo();
+            if (dgvArticulos.CurrentRow == null) return;
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            FormDetalleArticulo DetalleArticulo = new FormDetalleArticulo(seleccionado);
             DetalleArticulo.Show();
         }
 
