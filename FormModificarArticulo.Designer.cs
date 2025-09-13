@@ -49,25 +49,25 @@
             // 
             // gpImagenes
             // 
-            this.gpImagenes.Location = new System.Drawing.Point(237, 243);
+            this.gpImagenes.Location = new System.Drawing.Point(469, 38);
             this.gpImagenes.Name = "gpImagenes";
-            this.gpImagenes.Size = new System.Drawing.Size(200, 100);
+            this.gpImagenes.Size = new System.Drawing.Size(229, 215);
             this.gpImagenes.TabIndex = 29;
             this.gpImagenes.TabStop = false;
             this.gpImagenes.Text = "Imagenes";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(482, 395);
+            this.btnCancelar.Location = new System.Drawing.Point(469, 382);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(82, 23);
             this.btnCancelar.TabIndex = 28;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(384, 395);
+            this.btnModificar.Location = new System.Drawing.Point(623, 382);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 27;
@@ -77,107 +77,113 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(338, 196);
+            this.textBox4.Location = new System.Drawing.Point(164, 233);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(171, 20);
             this.textBox4.TabIndex = 26;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(338, 161);
+            this.comboBox2.Location = new System.Drawing.Point(164, 195);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(171, 21);
             this.comboBox2.TabIndex = 25;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(338, 133);
+            this.comboBox1.Location = new System.Drawing.Point(164, 155);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(171, 21);
             this.comboBox1.TabIndex = 24;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(338, 103);
+            this.textBox3.Location = new System.Drawing.Point(164, 116);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(171, 20);
             this.textBox3.TabIndex = 23;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(338, 76);
+            this.textBox2.Location = new System.Drawing.Point(164, 76);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(171, 20);
             this.textBox2.TabIndex = 22;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(338, 49);
+            this.textBox1.Location = new System.Drawing.Point(164, 38);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(171, 20);
             this.textBox1.TabIndex = 21;
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(260, 196);
+            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(67, 235);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(51, 18);
             this.lblPrecio.TabIndex = 20;
             this.lblPrecio.Text = "Precio";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(248, 164);
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(67, 198);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(72, 18);
             this.lblCategoria.TabIndex = 19;
             this.lblCategoria.Text = "Categoria";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(248, 141);
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(67, 158);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.Size = new System.Drawing.Size(50, 18);
             this.lblMarca.TabIndex = 18;
             this.lblMarca.Text = "Marca";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(248, 106);
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(67, 118);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(87, 18);
             this.lblDescripcion.TabIndex = 17;
             this.lblDescripcion.Text = "Descripcion";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(260, 82);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(67, 78);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(62, 18);
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "Nombre";
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(257, 49);
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(67, 40);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(56, 18);
             this.lblCodigo.TabIndex = 15;
             this.lblCodigo.Text = "Codigo";
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(236, 349);
+            this.btnCargar.Location = new System.Drawing.Point(70, 299);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.Size = new System.Drawing.Size(94, 33);
             this.btnCargar.TabIndex = 30;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
@@ -185,9 +191,9 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(317, 349);
+            this.btnQuitar.Location = new System.Drawing.Point(194, 299);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitar.Size = new System.Drawing.Size(90, 33);
             this.btnQuitar.TabIndex = 31;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
@@ -196,7 +202,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(776, 429);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.gpImagenes);
@@ -216,6 +223,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "FormModificarArticulo";
             this.Text = "Modificar Articulo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
