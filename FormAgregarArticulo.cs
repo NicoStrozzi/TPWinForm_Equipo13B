@@ -55,12 +55,19 @@ namespace TP_GestionArticulos
                     txtCodigo.Text = articulo.Codigo;
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
+                     if(articulo.Imagenes != null)
+                    {
+                        txtUrlImagen.Text=articulo.Imagenes;
+                    }
+                    else
+                    {
+                        txtUrlImagen.Text = "";
+                    }
+                cargarImagen(txtUrlImagen.Text);
 
-                    //imagen? cargarImagen(listaArticulos[0].Imagenes);
-
-                    cbxMarca.Text = articulo.Marca.ToString();
-                    cbxCategoria.Text = articulo.Categoria.ToString();
-                    txtPrecio.Text = articulo.Precio.ToString();
+                cbxMarca.Text = articulo.Marca.ToString();
+                cbxCategoria.Text = articulo.Categoria.ToString();
+                txtPrecio.Text = articulo.Precio.ToString();
 
                 }
             }
