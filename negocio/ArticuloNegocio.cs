@@ -108,9 +108,7 @@ namespace negocio
 
                     "UPDATE IMAGENES SET ImagenUrl = @ImagenUrl " +
                     "WHERE IdArticulo = @IdArticulo;"
-                    //"if @@rowcount=0"+
-                    //"INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl);"
-                );
+                 );
 
                 datos.setearParametros("@Codigo", art.Codigo);
                 datos.setearParametros("@Nombre", art.Nombre);
@@ -133,6 +131,23 @@ namespace negocio
             finally 
             { 
                 datos.cerrarconexion(); 
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            try
+            {
+                AccesoDatos datos=new AccesoDatos();
+                datos.setearConsulta("DELETE FROM IMAGENES  WHERE IdArticulo = @id; "+
+                                     "DELETE FROM ARTICULOS WHERE Id= @id;");
+                datos.setearParametros("@id",id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

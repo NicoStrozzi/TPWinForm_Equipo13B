@@ -94,7 +94,24 @@ namespace TP_GestionArticulos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio negocio=new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Esta seguro de eliminar?","Eliminando", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
 
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionado.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
