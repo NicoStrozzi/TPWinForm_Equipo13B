@@ -97,14 +97,29 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                // Solo Pongo algunos para probar hasta encontrar la forma de modificar todos
-                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, Precio = @Precio WHERE Id = @Id");
+                 datos.setearConsulta(
+                    "UPDATE ARTICULOS SET " +
+                    "Codigo = @Codigo, " +
+                    "Nombre = @Nombre, " +
+                    "Descripcion = @Descripcion, " +
+                    "Precio = @Precio, " +
+                    "IdMarca = @IdMarca, " +
+                    "IdCategoria = @IdCategoria " +
+                    "WHERE Id = @IdArticulo; " +
+
+                    "UPDATE IMAGENES SET " +
+                    "ImagenUrl = @ImagenUrl " +
+                    "WHERE IdArticulo = @IdArticulo;"
+                );
 
                 datos.setearParametros("@Codigo", art.Codigo);
                 datos.setearParametros("@Nombre", art.Nombre);
                 datos.setearParametros("@Descripcion", art.Descripcion);
                 datos.setearParametros("@Precio", art.Precio);
-                datos.setearParametros("@Id", art.Id);
+                datos.setearParametros("@IdMarca", art.Marca.Id);
+                datos.setearParametros("@IdCategoria", art.Categoria.Id);
+                datos.setearParametros("@ImagenUrl", art.Imagenes);
+                datos.setearParametros("@IdArticulo", art.Id);
 
                 datos.ejecutarAccion();
 
