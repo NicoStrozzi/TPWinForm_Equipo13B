@@ -74,8 +74,7 @@ namespace negocio
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
                  "VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" +
                 nuevo.Descripcion + "', " + nuevo.Precio +
-                ", @IdMarca, @IdCategoria)" +
-                "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (SCOPE_IDENTITY(), @ImagenUrl);");
+                ", @IdMarca, @IdCategoria)" + "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (SCOPE_IDENTITY(), @ImagenUrl);");
                 datos.setearParametros("@IdMarca", nuevo.Marca.Id);
                 datos.setearParametros("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametros("@ImagenUrl", nuevo.Imagenes);
@@ -107,9 +106,10 @@ namespace negocio
                     "IdCategoria = @IdCategoria " +
                     "WHERE Id = @IdArticulo; " +
 
-                    "UPDATE IMAGENES SET " +
-                    "ImagenUrl = @ImagenUrl " +
+                    "UPDATE IMAGENES SET ImagenUrl = @ImagenUrl " +
                     "WHERE IdArticulo = @IdArticulo;"
+                    //"if @@rowcount=0"+
+                    //"INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl);"
                 );
 
                 datos.setearParametros("@Codigo", art.Codigo);

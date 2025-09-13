@@ -63,11 +63,11 @@ namespace TP_GestionArticulos
                     {
                         txtUrlImagen.Text = "";
                     }
-                cargarImagen(txtUrlImagen.Text);
+                    cargarImagen(txtUrlImagen.Text);
 
-                cbxMarca.Text = articulo.Marca.ToString();
-                cbxCategoria.Text = articulo.Categoria.ToString();
-                txtPrecio.Text = articulo.Precio.ToString();
+                    cbxMarca.Text = articulo.Marca.ToString();
+                    cbxCategoria.Text = articulo.Categoria.ToString();
+                    txtPrecio.Text = articulo.Precio.ToString();
 
                 }
             }
