@@ -223,6 +223,7 @@
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagen.TabIndex = 7;
             this.pbImagen.TabStop = false;
+            this.pbImagen.Click += new System.EventHandler(this.pbImagen_Click);
             // 
             // panel1
             // 

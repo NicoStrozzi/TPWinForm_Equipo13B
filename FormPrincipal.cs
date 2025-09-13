@@ -101,5 +101,10 @@ namespace TP_GestionArticulos
         {
 
         }
+
+        private void pbImagen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

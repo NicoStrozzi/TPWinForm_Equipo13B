@@ -74,9 +74,11 @@ namespace negocio
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
                  "VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" +
                 nuevo.Descripcion + "', " + nuevo.Precio +
-                ", @IdMarca, @IdCategoria)");
-                datos.setearParametros("@IdMarca",nuevo.Marca.Id);
+                ", @IdMarca, @IdCategoria)" +
+                "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (SCOPE_IDENTITY(), @ImagenUrl);");
+                datos.setearParametros("@IdMarca", nuevo.Marca.Id);
                 datos.setearParametros("@IdCategoria", nuevo.Categoria.Id);
+                datos.setearParametros("@ImagenUrl", nuevo.Imagenes);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

@@ -86,6 +86,7 @@ namespace TP_GestionArticulos
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
                 articulo.Precio=decimal.Parse(txtPrecio.Text);
+                articulo.Imagenes=txtUrlImagen.Text;
 
                 if(articulo.Id != 0)
                 {
@@ -110,6 +111,36 @@ namespace TP_GestionArticulos
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpImagenes_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+      
+        }
+
+       private void cargarImagen(string imagenes)
+        {
+            try
+            {
+                pbImagen.Load(imagenes);
+            }
+            catch (Exception)
+            {
+
+                pbImagen.Load("https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=");
+            }
 
         }
     }
