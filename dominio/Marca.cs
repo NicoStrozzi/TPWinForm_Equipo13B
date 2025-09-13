@@ -9,14 +9,14 @@ namespace dominio
 {
     public class Marca
     {
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string descripcion { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
 
 
         public override string ToString()
         {
-            return descripcion;
+            return Descripcion;
         }
     }
 }

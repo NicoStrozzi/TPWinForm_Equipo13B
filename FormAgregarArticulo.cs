@@ -58,9 +58,9 @@ namespace TP_GestionArticulos
 
                     //imagen? cargarImagen(listaArticulos[0].Imagenes);
 
-                    cbxMarca.Text = articulo.marca.ToString();
-                    cbxCategoria.Text = articulo.categoria.ToString();
-                    txtPrecio.Text = articulo.precio.ToString();
+                    cbxMarca.Text = articulo.Marca.ToString();
+                    cbxCategoria.Text = articulo.Categoria.ToString();
+                    txtPrecio.Text = articulo.Precio.ToString();
 
                 }
             }
@@ -83,9 +83,9 @@ namespace TP_GestionArticulos
                 articulo.Codigo=txtCodigo.Text;
                 articulo.Nombre=txtNombre.Text;
                 articulo.Descripcion=txtDescripcion.Text;
-                articulo.marca = (Marca)cbxMarca.SelectedItem;
-                articulo.categoria = (Categoria)cbxCategoria.SelectedItem;
-                articulo.precio=decimal.Parse(txtPrecio.Text);
+                articulo.Marca = (Marca)cbxMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
+                articulo.Precio=decimal.Parse(txtPrecio.Text);
 
                 if(articulo.Id != 0)
                 {

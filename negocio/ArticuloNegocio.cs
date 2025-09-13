@@ -46,11 +46,11 @@ namespace negocio
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Imagenes = (string)lector["ImagenUrl"];
-                    aux.marca = new Marca();
-                    aux.marca.descripcion = (string)lector["Marca"];
-                    aux.categoria=new Categoria();
-                    aux.categoria.descripcion = (string)lector["Categoria"];
-                    aux.precio = (decimal)lector["Precio"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Descripcion = (string)lector["Marca"];
+                    aux.Categoria=new Categoria();
+                    aux.Categoria.Descripcion = (string)lector["Categoria"];
+                    aux.Precio = (decimal)lector["Precio"];
                     lista.Add(aux);
                 }
 
@@ -73,10 +73,10 @@ namespace negocio
             {
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
                  "VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" +
-                nuevo.Descripcion + "', " + nuevo.precio +
+                nuevo.Descripcion + "', " + nuevo.Precio +
                 ", @IdMarca, @IdCategoria)");
-                datos.setearParametros("@IdMarca",nuevo.marca.id);
-                datos.setearParametros("@IdCategoria", nuevo.categoria.id);
+                datos.setearParametros("@IdMarca",nuevo.Marca.Id);
+                datos.setearParametros("@IdCategoria", nuevo.Categoria.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -101,7 +101,7 @@ namespace negocio
                 datos.setearParametros("@Codigo", art.Codigo);
                 datos.setearParametros("@Nombre", art.Nombre);
                 datos.setearParametros("@Descripcion", art.Descripcion);
-                datos.setearParametros("@Precio", art.precio);
+                datos.setearParametros("@Precio", art.Precio);
                 datos.setearParametros("@Id", art.Id);
 
                 datos.ejecutarAccion();
