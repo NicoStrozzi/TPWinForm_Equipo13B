@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbFiltrosAvanzados = new System.Windows.Forms.GroupBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.lblCriterio = new System.Windows.Forms.Label();
@@ -45,8 +46,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
-            this.txtBuscarArticulos = new System.Windows.Forms.TextBox();
             this.btBuscarARticulos = new System.Windows.Forms.Button();
+            this.txtBuscarArticulos = new System.Windows.Forms.TextBox();
+            this.ttBusqueda = new System.Windows.Forms.ToolTip(this.components);
             this.gbFiltrosAvanzados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -206,7 +208,7 @@
             this.pbImagen.Location = new System.Drawing.Point(836, 233);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(291, 250);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagen.TabIndex = 7;
             this.pbImagen.TabStop = false;
             this.pbImagen.Click += new System.EventHandler(this.pbImagen_Click);
@@ -247,13 +249,6 @@
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Buscar Articulos";
             // 
-            // txtBuscarArticulos
-            // 
-            this.txtBuscarArticulos.Location = new System.Drawing.Point(22, 44);
-            this.txtBuscarArticulos.Name = "txtBuscarArticulos";
-            this.txtBuscarArticulos.Size = new System.Drawing.Size(149, 20);
-            this.txtBuscarArticulos.TabIndex = 8;
-            // 
             // btBuscarARticulos
             // 
             this.btBuscarARticulos.Location = new System.Drawing.Point(190, 44);
@@ -263,6 +258,22 @@
             this.btBuscarARticulos.Text = "Buscar";
             this.btBuscarARticulos.UseVisualStyleBackColor = true;
             this.btBuscarARticulos.Click += new System.EventHandler(this.btBuscarARticulos_Click);
+            // 
+            // txtBuscarArticulos
+            // 
+            this.txtBuscarArticulos.Location = new System.Drawing.Point(22, 44);
+            this.txtBuscarArticulos.Name = "txtBuscarArticulos";
+            this.txtBuscarArticulos.Size = new System.Drawing.Size(149, 20);
+            this.txtBuscarArticulos.TabIndex = 8;
+            this.ttBusqueda.SetToolTip(this.txtBuscarArticulos, "*Ingrese primeros caracteres para una busqueda rapida.\r\n*Presione \"Buscar\" sin in" +
+        "gresos para traer lista completa.");
+            // 
+            // ttBusqueda
+            // 
+            this.ttBusqueda.AutoPopDelay = 5000;
+            this.ttBusqueda.InitialDelay = 50;
+            this.ttBusqueda.ReshowDelay = 100;
+            this.ttBusqueda.ShowAlways = true;
             // 
             // FormPrincipal
             // 
@@ -316,6 +327,7 @@
         private System.Windows.Forms.GroupBox gbBusqueda;
         private System.Windows.Forms.Button btBuscarARticulos;
         private System.Windows.Forms.TextBox txtBuscarArticulos;
+        private System.Windows.Forms.ToolTip ttBusqueda;
     }
 }
 

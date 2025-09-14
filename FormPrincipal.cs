@@ -18,6 +18,9 @@ namespace TP_GestionArticulos
         public FormPrincipal()
         {
             InitializeComponent();
+
+           //ToolTip ttBuscar = new ToolTip();
+           //ttBuscar.SetToolTip(txtBuscarArticulos, "Ingrese primeros caracteres para buscar articulos en los campos Codigo y Nombre");
         }
 
       
@@ -229,6 +232,11 @@ namespace TP_GestionArticulos
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
             dgvArticulos.Columns["Imagenes"].Visible = false;
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }
