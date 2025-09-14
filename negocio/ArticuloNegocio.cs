@@ -171,27 +171,45 @@ namespace negocio
                 {
                     switch (criterio)
                     {
-                        case "Mayor a": consulta += "A.Precio > " + filtro; break;
-                        case "Menor a": consulta += "A.Precio < " + filtro; break;
-                        default: consulta += "A.Precio = " + filtro; break;
+                        case "Mayor a": 
+                            consulta += "A.Precio > " + filtro; 
+                            break;
+                        case "Menor a": 
+                            consulta += "A.Precio < " + filtro; 
+                            break;
+                        default: 
+                            consulta += "A.Precio = " + filtro; 
+                            break;
                     }
                 }
                 else if (campo == "Nombre")
                 {
                     switch (criterio)
                     {
-                        case "Comienza con": consulta += "A.Nombre LIKE '" + filtro + "%'"; break;
-                        case "Termina con": consulta += "A.Nombre LIKE '%" + filtro + "'"; break;
-                        default: consulta += "A.Nombre LIKE '%" + filtro + "%'"; break;
+                        case "Comienza con": 
+                            consulta += "A.Nombre LIKE '" + filtro + "%'"; 
+                            break;
+                        case "Termina con": 
+                            consulta += "A.Nombre LIKE '%" + filtro + "'"; 
+                            break;
+                        default: 
+                            consulta += "A.Nombre LIKE '%" + filtro + "%'"; 
+                            break;
                     }
                 }
                 else if (campo == "Descripcion")
                 {
                     switch (criterio)
                     {
-                        case "Comienza con": consulta += "A.Descripcion LIKE '" + filtro + "%'"; break;
-                        case "Termina con": consulta += "A.Descripcion LIKE '%" + filtro + "'"; break;
-                        default: consulta += "A.Descripcion LIKE '%" + filtro + "%'"; break;
+                        case "Comienza con": 
+                            consulta += "A.Descripcion LIKE '" + filtro + "%'"; 
+                            break;
+                        case "Termina con": 
+                            consulta += "A.Descripcion LIKE '%" + filtro + "'"; 
+                            break;
+                        default: 
+                            consulta += "A.Descripcion LIKE '%" + filtro + "%'"; 
+                            break;
                     }
                 }
                 datos.setearConsulta( consulta );

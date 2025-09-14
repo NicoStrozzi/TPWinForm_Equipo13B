@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using System.Configuration;
 
 namespace TP_GestionArticulos
 {
     public partial class FormAgregarArticulo : Form
     {
         private Articulo articulo = null;
+        private OpenFileDialog archivo = null;
         public FormAgregarArticulo()
         {
             InitializeComponent();
@@ -105,7 +108,11 @@ namespace TP_GestionArticulos
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado exitosamente");
                 }
-
+                //Guarda la imagen si la levanta localmente
+                if(archivo!=null&&!(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+                }
 
                 Close();
             }
@@ -150,5 +157,25 @@ namespace TP_GestionArticulos
             }
 
         }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo=new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg|png|*.png|jpeg|*.jpeg";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+
+                string destino = ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName;
+
+                if (File.Exists(destino))
+                {
+                    MessageBox.Show("La imagen ya existe en la carpeta. Elegi otra o cambia el nombre.");
+                    return;
+                }
+                File.Copy(archivo.FileName, destino);
+            }
+            }
     }
 }

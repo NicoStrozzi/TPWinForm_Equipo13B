@@ -45,6 +45,7 @@
             this.lblUrlImagen = new System.Windows.Forms.Label();
             this.txtUrlImagen = new System.Windows.Forms.TextBox();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,11 +211,21 @@
             // 
             // pbImagen
             // 
-            this.pbImagen.Location = new System.Drawing.Point(424, 57);
+            this.pbImagen.Location = new System.Drawing.Point(479, 60);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(232, 336);
             this.pbImagen.TabIndex = 12;
             this.pbImagen.TabStop = false;
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(398, 373);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarImagen.TabIndex = 13;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
             // FormAgregarArticulo
             // 
@@ -222,6 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(946, 579);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.txtUrlImagen);
             this.Controls.Add(this.lblUrlImagen);
@@ -269,5 +281,6 @@
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.TextBox txtUrlImagen;
         private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
