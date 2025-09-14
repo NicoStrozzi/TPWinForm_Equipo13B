@@ -150,5 +150,76 @@ namespace negocio
                 throw ex;
             }
         }
+
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Articulo>lista=new List<Articulo>();
+            AccesoDatos datos =new AccesoDatos();
+            try
+            {
+                string consulta ="SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, " +
+                                 "ISNULL(I.ImagenUrl,'') AS ImagenUrl, " +
+                                 "ISNULL(M.Descripcion,'') AS Marca, " +
+                                 "ISNULL(C.Descripcion,'') AS Categoria " +
+                                 "FROM ARTICULOS A " +
+                                 "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
+                                 "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
+                                 "LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id " +
+                                 "WHERE 1=1 AND ";
+
+                if (campo == "Precio")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a": consulta += "A.Precio > " + filtro; break;
+                        case "Menor a": consulta += "A.Precio < " + filtro; break;
+                        default: consulta += "A.Precio = " + filtro; break;
+                    }
+                }
+                else if (campo == "Nombre")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con": consulta += "A.Nombre LIKE '" + filtro + "%'"; break;
+                        case "Termina con": consulta += "A.Nombre LIKE '%" + filtro + "'"; break;
+                        default: consulta += "A.Nombre LIKE '%" + filtro + "%'"; break;
+                    }
+                }
+                else if (campo == "Descripcion")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con": consulta += "A.Descripcion LIKE '" + filtro + "%'"; break;
+                        case "Termina con": consulta += "A.Descripcion LIKE '%" + filtro + "'"; break;
+                        default: consulta += "A.Descripcion LIKE '%" + filtro + "%'"; break;
+                    }
+                }
+                datos.setearConsulta( consulta );
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Articulo a = new Articulo();
+                    a.Id = (int)datos.Lector["Id"];
+                    a.Codigo = (string)datos.Lector["Codigo"];
+                    a.Nombre = (string)datos.Lector["Nombre"];
+                    a.Descripcion = (string)datos.Lector["Descripcion"];
+                    a.Precio = (decimal)datos.Lector["Precio"];
+                    a.Imagenes = (string)datos.Lector["ImagenUrl"];
+
+                    a.Marca = new Marca();
+                    a.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    a.Categoria = new Categoria();
+                    a.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+
+                    lista.Add(a);
+                }
+                return lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
