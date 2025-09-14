@@ -191,6 +191,16 @@ namespace TP_GestionArticulos
             }
             return true;
         }
+
+        private void actualizarBotonesSegunGrilla(DataGridView dgv)
+        {
+            bool hayFilas = dgv != null && dgv.Rows.Count > 0;
+
+            btnModificar.Enabled = hayFilas;
+            btnEliminar.Enabled = hayFilas;
+            btnDetalle.Enabled = hayFilas;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -202,6 +212,8 @@ namespace TP_GestionArticulos
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltro.Text;
                 dgvArticulos.DataSource=negocio.filtrar(campo,criterio,filtro);
+
+                actualizarBotonesSegunGrilla(dgvArticulos);
             }
             catch (Exception ex)
             {
