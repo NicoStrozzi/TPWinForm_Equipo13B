@@ -47,22 +47,26 @@ namespace TP_GestionArticulos
             cargarImagen(articulo.Imagenes);
         }
 
-        private void cargarImagen(string url)
+        private void cargarImagen(string imagenes)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(url))
-                    pbxImagen.Load("https://via.placeholder.com/300x400?text=Sin+imagen");
-                else
-                    pbxImagen.Load(url);
+                pbImagenDetalle.Load(imagenes);
             }
-            catch
+            catch (Exception)
             {
-                pbxImagen.Load("https://via.placeholder.com/300x400?text=Error");
+
+                pbImagenDetalle.Load("https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=");
             }
+
         }
 
         private void lblMostrarMarca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDerecha_Click(object sender, EventArgs e)
         {
 
         }
