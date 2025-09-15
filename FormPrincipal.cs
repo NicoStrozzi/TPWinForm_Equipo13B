@@ -52,7 +52,12 @@ namespace TP_GestionArticulos
             listaArticulos = negocio.listar();
             dgvArticulos.DataSource = listaArticulos;
             dgvArticulos.Columns["Imagenes"].Visible = false;
-            cargarImagen(listaArticulos[0].Imagenes);
+
+            if (!(listaArticulos == null || listaArticulos.Count == 0))
+                cargarImagen(listaArticulos[0].Imagenes);
+
+            
+            actualizarBotonesSegunLista(listaArticulos);
 
         }
 
@@ -79,7 +84,9 @@ namespace TP_GestionArticulos
             listaArticulos = negocio.listar();
             dgvArticulos.DataSource = listaArticulos;
             dgvArticulos.Columns["Imagenes"].Visible = false;
-            cargarImagen(listaArticulos[0].Imagenes);
+
+            if (!(listaArticulos == null || listaArticulos.Count == 0))
+                cargarImagen(listaArticulos[0].Imagenes);
         }
         private void cargarImagen(string imagenes)
         {
@@ -195,6 +202,15 @@ namespace TP_GestionArticulos
             return true;
         }
 
+        private void actualizarBotonesSegunLista(List<Articulo> lista)
+        {
+            bool hayArticulos = lista != null && lista.Count > 0;
+
+            btnModificar.Enabled = hayArticulos;
+            btnEliminar.Enabled = hayArticulos;
+            btnDetalle.Enabled = hayArticulos;
+            btnBuscar.Enabled = hayArticulos;
+        }
         private void actualizarBotonesSegunGrilla(DataGridView dgv)
         {
             bool hayFilas = dgv != null && dgv.Rows.Count > 0;
