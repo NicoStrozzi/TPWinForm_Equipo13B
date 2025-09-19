@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using negocio;
 
 namespace TP_GestionArticulos
 {
     public partial class FormDetalleArticulo : Form
     {
         private Articulo articulo;
+        private List<string> imagenes;
+        private int indiceActual = 0;
         public FormDetalleArticulo(Articulo art)
         {
             InitializeComponent();
@@ -43,8 +46,18 @@ namespace TP_GestionArticulos
             lblMostrarMarca.Text = articulo.Marca.Descripcion;
             lblMostrarCategoria.Text = articulo.Categoria.Descripcion;
             lblMostrarPrecio.Text = articulo.Precio.ToString();
-                   
-            cargarImagen(articulo.Imagenes);
+
+            // Cargar TODAS las imágenes del artículo 
+            List<string> imgs = new ArticuloNegocio().ListarImagenes(articulo.Id);
+            imagenes = imgs;            // tu lista privada para recorrer
+            if (imagenes.Count > 0)
+            {
+                cargarImagen(imagenes[0]);
+            }
+            else
+            {
+                cargarImagen(articulo.Imagenes);
+            }
         }
 
         private void cargarImagen(string imagenes)
@@ -69,6 +82,34 @@ namespace TP_GestionArticulos
         private void btnDerecha_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (imagenes == null || imagenes.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                indiceActual = (indiceActual - 1 + imagenes.Count) % imagenes.Count;
+                cargarImagen(imagenes[indiceActual]);
+
+            }
+
+        }
+
+        private void btnDerecha_Click_1(object sender, EventArgs e)
+        {
+            if (imagenes == null || imagenes.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                indiceActual = (indiceActual + 1) % imagenes.Count;
+                cargarImagen(imagenes[indiceActual]);
+            }
         }
     }
 }

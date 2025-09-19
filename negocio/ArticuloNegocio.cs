@@ -13,60 +13,46 @@ namespace negocio
     {
         public List<Articulo> listar()
         {
-            List <Articulo> lista = new List<Articulo>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
-
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-                conexion.ConnectionString = "Data Source=.\\SQLEXPRESS; Initial Catalog=CATALOGO_P3_DB; Integrated Security=true";
-                
-                comando.CommandType = System.Data.CommandType.Text;
-                
-                comando.Connection = conexion;
-                comando.CommandText = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, " +
-                                 "       ISNULL(I.ImagenUrl,'')    AS ImagenUrl, " +
-                                 "       ISNULL(M.Descripcion,'')  AS Marca, " +
-                                 "       ISNULL(C.Descripcion,'')  AS Categoria " +
-                                 "FROM ARTICULOS A " +
-                                 "LEFT JOIN MARCAS      M ON A.IdMarca     = M.Id " +
-                                 "LEFT JOIN CATEGORIAS  C ON A.IdCategoria = C.Id " +
-                                 "LEFT JOIN IMAGENES    I ON I.IdArticulo  = A.Id;";
+                datos.setearConsulta(
+                    "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, " +
+                    "ISNULL(M.Descripcion,'') AS Marca, " +
+                    "ISNULL(C.Descripcion,'') AS Categoria, " +
+                    "ISNULL(I.ImagenUrl,'')   AS ImagenUrl " +
+                    "FROM ARTICULOS A " +
+                    "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
+                    "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
+                    "OUTER APPLY (SELECT TOP 1 ImagenUrl FROM IMAGENES I WHERE I.IdArticulo = A.Id ORDER BY Id) I");
+                datos.ejecutarLectura();
 
-
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Id = (int)lector["Id"];
-                    aux.Codigo = (string)lector["Codigo"];
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-
-                    if (!(lector["ImagenUrl"] is DBNull))
-                        aux.Imagenes = (string)lector["ImagenUrl"];
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagenes = (string)datos.Lector["ImagenUrl"]; 
 
                     aux.Marca = new Marca();
-                    aux.Marca.Descripcion = (string)lector["Marca"];
-                    aux.Categoria=new Categoria();
-                    aux.Categoria.Descripcion = (string)lector["Categoria"];
-                    aux.Precio = (decimal)lector["Precio"];
-                    lista.Add(aux);
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+
+                    lista.Add(aux); 
                 }
 
-                conexion.Close();
                 return lista;
-
             }
-            catch (Exception ex)
+            finally
             {
-
-                throw ex;
+                datos.cerrarconexion();
             }
-
         }
 
         public void agregar(Articulo nuevo)
@@ -107,10 +93,7 @@ namespace negocio
                     "Precio = @Precio, " +
                     "IdMarca = @IdMarca, " +
                     "IdCategoria = @IdCategoria " +
-                    "WHERE Id = @IdArticulo; " +
-
-                    "UPDATE IMAGENES SET ImagenUrl = @ImagenUrl " +
-                    "WHERE IdArticulo = @IdArticulo;"
+                    "WHERE Id = @IdArticulo;"
                  );
 
                 datos.setearParametros("@Codigo", art.Codigo);
@@ -160,15 +143,16 @@ namespace negocio
             AccesoDatos datos =new AccesoDatos();
             try
             {
-                string consulta ="SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, " +
-                                 "ISNULL(I.ImagenUrl,'') AS ImagenUrl, " +
-                                 "ISNULL(M.Descripcion,'') AS Marca, " +
-                                 "ISNULL(C.Descripcion,'') AS Categoria " +
-                                 "FROM ARTICULOS A " +
-                                 "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
-                                 "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
-                                 "LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id " +
-                                 "WHERE 1=1 AND ";
+                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, " +
+                                  "ISNULL(M.Descripcion,'') AS Marca, " +
+                                  "ISNULL(C.Descripcion,'') AS Categoria, " +
+                                  "ISNULL(I.ImagenUrl,'')   AS ImagenUrl " +
+                                  "FROM ARTICULOS A " +
+                                  "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
+                                  "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
+                                  "OUTER APPLY (SELECT TOP 1 ImagenUrl " +
+                                  "FROM IMAGENES I WHERE I.IdArticulo = A.Id ORDER BY Id) I " +
+                                  "WHERE 1=1 ";
 
                 if (campo == "Precio")
                 {
@@ -240,6 +224,60 @@ namespace negocio
             {
 
                 throw;
+            }
+        }
+
+        public List<string> ListarImagenes(int idArticulo)
+        {
+            List<string> lista = new List<string>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT ImagenUrl FROM IMAGENES WHERE IdArticulo = @id ORDER BY Id");
+                datos.setearParametros("@id", idArticulo);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    lista.Add((string)datos.Lector["ImagenUrl"]);
+                }
+                return lista;
+            }
+            finally
+            {
+                datos.cerrarconexion();
+            }
+        }
+
+        public void AgregarImagen(int idArticulo, string url)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@id, @url)");
+                datos.setearParametros("@id", idArticulo);
+                datos.setearParametros("@url", url);
+                datos.ejecutarAccion();
+            }
+            finally
+            {
+                datos.cerrarconexion();
+            }
+        }
+
+        public bool ExisteCodigo(string codigo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT 1 FROM ARTICULOS WHERE Codigo = @cod");
+                datos.setearParametros("@cod", codigo);
+                datos.ejecutarLectura();
+                return datos.Lector.Read(); 
+            }
+            finally
+            {
+                datos.cerrarconexion();
             }
         }
     }

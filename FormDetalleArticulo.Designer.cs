@@ -41,6 +41,8 @@
             this.lblMostrarCategoria = new System.Windows.Forms.Label();
             this.lblMostrarPrecio = new System.Windows.Forms.Label();
             this.pbImagenDetalle = new System.Windows.Forms.PictureBox();
+            this.btnIzquierda = new System.Windows.Forms.Button();
+            this.btnDerecha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenDetalle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,12 +178,34 @@
             this.pbImagenDetalle.TabIndex = 19;
             this.pbImagenDetalle.TabStop = false;
             // 
+            // btnIzquierda
+            // 
+            this.btnIzquierda.Location = new System.Drawing.Point(441, 267);
+            this.btnIzquierda.Name = "btnIzquierda";
+            this.btnIzquierda.Size = new System.Drawing.Size(75, 23);
+            this.btnIzquierda.TabIndex = 20;
+            this.btnIzquierda.Text = "<";
+            this.btnIzquierda.UseVisualStyleBackColor = true;
+            this.btnIzquierda.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnDerecha
+            // 
+            this.btnDerecha.Location = new System.Drawing.Point(533, 267);
+            this.btnDerecha.Name = "btnDerecha";
+            this.btnDerecha.Size = new System.Drawing.Size(75, 23);
+            this.btnDerecha.TabIndex = 21;
+            this.btnDerecha.Text = ">";
+            this.btnDerecha.UseVisualStyleBackColor = true;
+            this.btnDerecha.Click += new System.EventHandler(this.btnDerecha_Click_1);
+            // 
             // FormDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(651, 301);
+            this.Controls.Add(this.btnDerecha);
+            this.Controls.Add(this.btnIzquierda);
             this.Controls.Add(this.pbImagenDetalle);
             this.Controls.Add(this.lblMostrarPrecio);
             this.Controls.Add(this.lblMostrarCategoria);
@@ -220,5 +244,7 @@
         private System.Windows.Forms.Label lblMostrarCategoria;
         private System.Windows.Forms.Label lblMostrarPrecio;
         private System.Windows.Forms.PictureBox pbImagenDetalle;
+        private System.Windows.Forms.Button btnIzquierda;
+        private System.Windows.Forms.Button btnDerecha;
     }
 }

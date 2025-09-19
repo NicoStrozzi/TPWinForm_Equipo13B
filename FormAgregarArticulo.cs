@@ -87,7 +87,41 @@ namespace TP_GestionArticulos
             ArticuloNegocio negocio= new ArticuloNegocio();
             try
             {
-                if(articulo == null)
+                if (txtCodigo.Text == "" ||
+                    txtNombre.Text == "" ||
+                    txtDescripcion.Text == "" ||
+                    txtPrecio.Text == "" ||
+                    cbxMarca.SelectedIndex == -1 ||
+                    cbxCategoria.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Todos los campos son obligatorios.");
+                    return;
+                }
+
+                decimal precio;
+                try
+                {
+                    precio = decimal.Parse(txtPrecio.Text); 
+                }
+                catch
+                {
+                    MessageBox.Show("Ingrese un precio válido.");
+                    return; 
+                }
+
+                if (precio <= 0)
+                {
+                    MessageBox.Show("El precio debe ser mayor a 0.");
+                    return;
+                }
+
+                if ((articulo == null || articulo.Id == 0) && negocio.ExisteCodigo(txtCodigo.Text.Trim()))
+                {
+                    MessageBox.Show("El código ya existe. Ingrese otro.");
+                    return;
+                }
+
+                if (articulo == null)
                     articulo = new Articulo();
 
                 articulo.Codigo=txtCodigo.Text;
@@ -95,7 +129,7 @@ namespace TP_GestionArticulos
                 articulo.Descripcion=txtDescripcion.Text;
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
-                articulo.Precio=decimal.Parse(txtPrecio.Text);
+                articulo.Precio = precio; // decimal.Parse(txtPrecio.Text);
                 articulo.Imagenes=txtUrlImagen.Text;
 
                 if(articulo.Id != 0)
@@ -111,9 +145,18 @@ namespace TP_GestionArticulos
                 //Guarda la imagen si la levanta localmente
                 if(archivo!=null&&!(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
                 {
-                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+                    string destino = ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName;
+                    if(!File.Exists(destino)) 
+                    File.Copy(archivo.FileName, destino);
                 }
-
+                //Si estamos modificando, agregar nueva imagen si no existe
+                string url = txtUrlImagen.Text.Trim();
+                if (articulo.Id != 0 && url.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                {
+                    List<string> existentes = negocio.ListarImagenes(articulo.Id);
+                    if (!existentes.Contains(url))
+                        negocio.AgregarImagen(articulo.Id, url);
+                }
                 Close();
             }
             catch (Exception ex)
