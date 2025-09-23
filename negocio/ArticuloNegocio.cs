@@ -152,7 +152,7 @@ namespace negocio
                                   "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
                                   "OUTER APPLY (SELECT TOP 1 ImagenUrl " +
                                   "FROM IMAGENES I WHERE I.IdArticulo = A.Id ORDER BY Id) I " +
-                                  "WHERE 1=1 ";
+                                  "WHERE 1=1 AND ";
 
                 if (campo == "Precio")
                 {
@@ -220,10 +220,10 @@ namespace negocio
                 }
                 return lista;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
