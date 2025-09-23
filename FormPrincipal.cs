@@ -29,7 +29,9 @@ namespace TP_GestionArticulos
         {
             FormAgregarArticulo AgregarArticulo = new FormAgregarArticulo();
             AgregarArticulo.ShowDialog();
-            cargar();            
+            cargar();
+            actualizarBotonesSegunLista(listaArticulos);
+
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -120,6 +122,7 @@ namespace TP_GestionArticulos
                     seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                     negocio.eliminar(seleccionado.Id);
                     cargar();
+                    actualizarBotonesSegunLista(listaArticulos);
                 }
             }
             catch (Exception ex)
@@ -210,6 +213,7 @@ namespace TP_GestionArticulos
             btnEliminar.Enabled = hayArticulos;
             btnDetalle.Enabled = hayArticulos;
             btnBuscar.Enabled = hayArticulos;
+            btBuscarARticulos.Enabled = hayArticulos;
         }
         private void actualizarBotonesSegunGrilla(DataGridView dgv)
         {
@@ -260,6 +264,8 @@ namespace TP_GestionArticulos
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
             dgvArticulos.Columns["Imagenes"].Visible = false;
+
+            actualizarBotonesSegunGrilla(dgvArticulos);
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
