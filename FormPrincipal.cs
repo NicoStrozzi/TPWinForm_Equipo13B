@@ -272,5 +272,11 @@ namespace TP_GestionArticulos
         {
 
         }
+
+        private void btnGestionMarcas_Click(object sender, EventArgs e)
+        {
+            FormGestionarMarcas GestionarMarcas = new FormGestionarMarcas();
+            GestionarMarcas.ShowDialog();
+        }
     }
 }
