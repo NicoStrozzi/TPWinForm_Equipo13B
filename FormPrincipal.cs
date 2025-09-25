@@ -278,5 +278,12 @@ namespace TP_GestionArticulos
             FormGestionarMarcas GestionarMarcas = new FormGestionarMarcas();
             GestionarMarcas.ShowDialog();
         }
+
+        private void btnGestionDeImagen_Click(object sender, EventArgs e)
+        {
+            FormGestionImagenDB gestionarImagen = new FormGestionImagenDB();
+            gestionarImagen.ShowDialog();
+            cargar();
+        }
     }
 }

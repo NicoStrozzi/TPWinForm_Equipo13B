@@ -47,11 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgregarImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarImagen.Designer.cs">
+      <DependentUpon>FormAgregarImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionarMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGestionarMarcas.Designer.cs">
       <DependentUpon>FormGestionarMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionImagenDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionImagenDB.Designer.cs">
+      <DependentUpon>FormGestionImagenDB.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -73,8 +85,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarImagen.resx">
+      <DependentUpon>FormAgregarImagen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGestionarMarcas.resx">
       <DependentUpon>FormGestionarMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionImagenDB.resx">
+      <DependentUpon>FormGestionImagenDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
