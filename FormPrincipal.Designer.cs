@@ -291,7 +291,7 @@
             // btnGestionDeImagen
             // 
             this.btnGestionDeImagen.Location = new System.Drawing.Point(686, 86);
-            this.btnGestionDeImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionDeImagen.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionDeImagen.Name = "btnGestionDeImagen";
             this.btnGestionDeImagen.Size = new System.Drawing.Size(128, 23);
             this.btnGestionDeImagen.TabIndex = 11;
@@ -307,6 +307,7 @@
             this.btnCategoria.TabIndex = 12;
             this.btnCategoria.Text = "Gestionar Categoria";
             this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // FormPrincipal
             // 

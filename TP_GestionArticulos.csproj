@@ -59,6 +59,12 @@
     <Compile Include="FormGestionarMarcas.Designer.cs">
       <DependentUpon>FormGestionarMarcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGestionCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionCategoria.Designer.cs">
+      <DependentUpon>FormGestionCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionImagenDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionarMarcas.resx">
       <DependentUpon>FormGestionarMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionCategoria.resx">
+      <DependentUpon>FormGestionCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionImagenDB.resx">
       <DependentUpon>FormGestionImagenDB.cs</DependentUpon>

@@ -40,5 +40,47 @@ namespace negocio
             }
 
         }
+
+        public void agregar(Categoria nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO CATEGORIAS (Descripcion) VALUES(@descripcion)");
+                datos.setearParametros("@Descripcion", nuevo.Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarconexion();
+            }
+        }
+
+        public bool existeCategoria(string descripcion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT 1 FROM CATEGORIAS WHERE Descripcion=@Descripcion");
+                datos.setearParametros("@Descripcion", descripcion);
+                datos.ejecutarLectura();
+                return datos.Lector.Read();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarconexion();
+            }
+        }
     }
 }

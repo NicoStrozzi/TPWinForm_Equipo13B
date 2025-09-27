@@ -285,5 +285,11 @@ namespace TP_GestionArticulos
             gestionarImagen.ShowDialog();
             cargar();
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            FormGestionCategoria GestionarCategoria = new FormGestionCategoria();
+            GestionarCategoria.ShowDialog();
+        }
     }
 }
