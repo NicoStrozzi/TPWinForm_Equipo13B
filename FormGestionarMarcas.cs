@@ -44,9 +44,21 @@ namespace TP_GestionArticulos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-            negocio.eliminar(seleccionada.Id);
-            cargar();
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Esta seguro de eliminar?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionada.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void dgvMarcas_SelectionChanged(object sender, EventArgs e)

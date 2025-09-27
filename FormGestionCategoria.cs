@@ -107,9 +107,21 @@ namespace TP_GestionArticulos
 
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
-            Categoria seleccionada = (Categoria)dgvCategoria.CurrentRow.DataBoundItem;
-            negocio.eliminar(seleccionada.Id);
-            cargar();
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Esta seguro de eliminar?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    Categoria seleccionada = (Categoria)dgvCategoria.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionada.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -29,38 +29,30 @@
         private void InitializeComponent()
         {
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
-            this.lblMarcas = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.gbGestionMarca = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
+            this.gbGestionMarca.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvMarcas
             // 
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(104, 73);
+            this.dgvMarcas.Location = new System.Drawing.Point(401, 42);
             this.dgvMarcas.Name = "dgvMarcas";
-            this.dgvMarcas.Size = new System.Drawing.Size(240, 150);
+            this.dgvMarcas.Size = new System.Drawing.Size(407, 209);
             this.dgvMarcas.TabIndex = 0;
             this.dgvMarcas.SelectionChanged += new System.EventHandler(this.dgvMarcas_SelectionChanged);
             // 
-            // lblMarcas
-            // 
-            this.lblMarcas.AutoSize = true;
-            this.lblMarcas.Location = new System.Drawing.Point(57, 37);
-            this.lblMarcas.Name = "lblMarcas";
-            this.lblMarcas.Size = new System.Drawing.Size(52, 13);
-            this.lblMarcas.TabIndex = 1;
-            this.lblMarcas.Text = "MARCAS";
-            // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(16, 278);
+            this.btnAgregar.Location = new System.Drawing.Point(6, 79);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(111, 38);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -68,9 +60,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(143, 277);
+            this.btnModificar.Location = new System.Drawing.Point(123, 79);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(111, 38);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -78,9 +70,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(277, 277);
+            this.btnEliminar.Location = new System.Drawing.Point(240, 79);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(111, 38);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -89,48 +81,59 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(57, 240);
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(19, 21);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(117, 13);
             this.lblDescripcion.TabIndex = 5;
-            this.lblDescripcion.Text = "Descripcion:";
+            this.lblDescripcion.Text = "Descripcion Marca:";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(129, 237);
+            this.txtDescripcion.Location = new System.Drawing.Point(149, 19);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(172, 20);
             this.txtDescripcion.TabIndex = 6;
+            // 
+            // gbGestionMarca
+            // 
+            this.gbGestionMarca.Controls.Add(this.txtDescripcion);
+            this.gbGestionMarca.Controls.Add(this.lblDescripcion);
+            this.gbGestionMarca.Controls.Add(this.btnEliminar);
+            this.gbGestionMarca.Controls.Add(this.btnModificar);
+            this.gbGestionMarca.Controls.Add(this.btnAgregar);
+            this.gbGestionMarca.Location = new System.Drawing.Point(27, 42);
+            this.gbGestionMarca.Name = "gbGestionMarca";
+            this.gbGestionMarca.Size = new System.Drawing.Size(357, 142);
+            this.gbGestionMarca.TabIndex = 7;
+            this.gbGestionMarca.TabStop = false;
             // 
             // FormGestionarMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.lblMarcas);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(835, 288);
+            this.Controls.Add(this.gbGestionMarca);
             this.Controls.Add(this.dgvMarcas);
             this.Name = "FormGestionarMarcas";
             this.Text = "Gestion De Marcas";
             this.Load += new System.EventHandler(this.FormGestionarMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
+            this.gbGestionMarca.ResumeLayout(false);
+            this.gbGestionMarca.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMarcas;
-        private System.Windows.Forms.Label lblMarcas;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.GroupBox gbGestionMarca;
     }
 }

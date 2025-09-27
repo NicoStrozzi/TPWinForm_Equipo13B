@@ -52,6 +52,7 @@
             this.btnGestionMarcas = new System.Windows.Forms.Button();
             this.btnGestionDeImagen = new System.Windows.Forms.Button();
             this.btnCategoria = new System.Windows.Forms.Button();
+            this.btnGestionarArticulos = new System.Windows.Forms.Button();
             this.gbFiltrosAvanzados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -280,9 +281,9 @@
             // 
             // btnGestionMarcas
             // 
-            this.btnGestionMarcas.Location = new System.Drawing.Point(264, 86);
+            this.btnGestionMarcas.Location = new System.Drawing.Point(331, 86);
             this.btnGestionMarcas.Name = "btnGestionMarcas";
-            this.btnGestionMarcas.Size = new System.Drawing.Size(100, 23);
+            this.btnGestionMarcas.Size = new System.Drawing.Size(111, 38);
             this.btnGestionMarcas.TabIndex = 10;
             this.btnGestionMarcas.Text = "Gestionar Marcas";
             this.btnGestionMarcas.UseVisualStyleBackColor = true;
@@ -290,10 +291,10 @@
             // 
             // btnGestionDeImagen
             // 
-            this.btnGestionDeImagen.Location = new System.Drawing.Point(686, 86);
+            this.btnGestionDeImagen.Location = new System.Drawing.Point(704, 86);
             this.btnGestionDeImagen.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionDeImagen.Name = "btnGestionDeImagen";
-            this.btnGestionDeImagen.Size = new System.Drawing.Size(128, 23);
+            this.btnGestionDeImagen.Size = new System.Drawing.Size(111, 38);
             this.btnGestionDeImagen.TabIndex = 11;
             this.btnGestionDeImagen.Text = "Gestionar Imagenes";
             this.btnGestionDeImagen.UseVisualStyleBackColor = true;
@@ -301,13 +302,22 @@
             // 
             // btnCategoria
             // 
-            this.btnCategoria.Location = new System.Drawing.Point(423, 86);
+            this.btnCategoria.Location = new System.Drawing.Point(505, 86);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(118, 23);
+            this.btnCategoria.Size = new System.Drawing.Size(111, 38);
             this.btnCategoria.TabIndex = 12;
             this.btnCategoria.Text = "Gestionar Categoria";
             this.btnCategoria.UseVisualStyleBackColor = true;
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
+            // btnGestionarArticulos
+            // 
+            this.btnGestionarArticulos.Location = new System.Drawing.Point(159, 86);
+            this.btnGestionarArticulos.Name = "btnGestionarArticulos";
+            this.btnGestionarArticulos.Size = new System.Drawing.Size(111, 38);
+            this.btnGestionarArticulos.TabIndex = 13;
+            this.btnGestionarArticulos.Text = "Gestionar Articulos";
+            this.btnGestionarArticulos.UseVisualStyleBackColor = true;
             // 
             // FormPrincipal
             // 
@@ -315,6 +325,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1146, 530);
+            this.Controls.Add(this.btnGestionarArticulos);
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnGestionDeImagen);
             this.Controls.Add(this.btnGestionMarcas);
@@ -368,6 +379,7 @@
         private System.Windows.Forms.Button btnGestionMarcas;
         private System.Windows.Forms.Button btnGestionDeImagen;
         private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.Button btnGestionarArticulos;
     }
 }
 
