@@ -104,5 +104,12 @@ namespace TP_GestionArticulos
             cargar();
             tbDescripcionCat.Clear();
         }
+
+        private void btnEliminarCategoria_Click(object sender, EventArgs e)
+        {
+            Categoria seleccionada = (Categoria)dgvCategoria.CurrentRow.DataBoundItem;
+            negocio.eliminar(seleccionada.Id);
+            cargar();
+        }
     }
 }
