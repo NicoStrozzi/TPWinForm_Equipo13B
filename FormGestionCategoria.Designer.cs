@@ -33,6 +33,7 @@
             this.tbDescripcionCat = new System.Windows.Forms.TextBox();
             this.lblDescripcionCateg = new System.Windows.Forms.Label();
             this.gbAgregar = new System.Windows.Forms.GroupBox();
+            this.btnModificarCategoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.gbAgregar.SuspendLayout();
             this.SuspendLayout();
@@ -40,14 +41,15 @@
             // dgvCategoria
             // 
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategoria.Location = new System.Drawing.Point(357, 79);
+            this.dgvCategoria.Location = new System.Drawing.Point(382, 91);
             this.dgvCategoria.Name = "dgvCategoria";
-            this.dgvCategoria.Size = new System.Drawing.Size(370, 209);
+            this.dgvCategoria.Size = new System.Drawing.Size(392, 209);
             this.dgvCategoria.TabIndex = 0;
+            this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(154, 49);
+            this.btnAgregar.Location = new System.Drawing.Point(6, 83);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(94, 24);
             this.btnAgregar.TabIndex = 1;
@@ -74,20 +76,31 @@
             // 
             // gbAgregar
             // 
+            this.gbAgregar.Controls.Add(this.btnModificarCategoria);
             this.gbAgregar.Controls.Add(this.lblDescripcionCateg);
             this.gbAgregar.Controls.Add(this.tbDescripcionCat);
             this.gbAgregar.Controls.Add(this.btnAgregar);
             this.gbAgregar.Location = new System.Drawing.Point(12, 91);
             this.gbAgregar.Name = "gbAgregar";
-            this.gbAgregar.Size = new System.Drawing.Size(339, 95);
+            this.gbAgregar.Size = new System.Drawing.Size(339, 159);
             this.gbAgregar.TabIndex = 4;
             this.gbAgregar.TabStop = false;
+            // 
+            // btnModificarCategoria
+            // 
+            this.btnModificarCategoria.Location = new System.Drawing.Point(123, 83);
+            this.btnModificarCategoria.Name = "btnModificarCategoria";
+            this.btnModificarCategoria.Size = new System.Drawing.Size(94, 24);
+            this.btnModificarCategoria.TabIndex = 4;
+            this.btnModificarCategoria.Text = "Modificar";
+            this.btnModificarCategoria.UseVisualStyleBackColor = true;
+            this.btnModificarCategoria.Click += new System.EventHandler(this.btnModificarCategoria_Click);
             // 
             // FormGestionCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 450);
+            this.ClientSize = new System.Drawing.Size(786, 450);
             this.Controls.Add(this.gbAgregar);
             this.Controls.Add(this.dgvCategoria);
             this.Name = "FormGestionCategoria";
@@ -107,5 +120,6 @@
         private System.Windows.Forms.TextBox tbDescripcionCat;
         private System.Windows.Forms.Label lblDescripcionCateg;
         private System.Windows.Forms.GroupBox gbAgregar;
+        private System.Windows.Forms.Button btnModificarCategoria;
     }
 }

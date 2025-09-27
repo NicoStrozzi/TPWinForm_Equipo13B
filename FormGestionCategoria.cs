@@ -49,7 +49,7 @@ namespace TP_GestionArticulos
             string descripcion = tbDescripcionCat.Text.Trim();
             if (descripcion == "")
             {
-                MessageBox.Show("Ingrese una descrpción");
+                MessageBox.Show("Ingrese categoria para agregar");
                 return;
             }
 
@@ -75,6 +75,34 @@ namespace TP_GestionArticulos
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnModificarCategoria_Click(object sender, EventArgs e)
+        {
+            Categoria seleccionada = (Categoria)dgvCategoria.CurrentRow.DataBoundItem;
+            seleccionada.Descripcion = tbDescripcionCat.Text.Trim();
+
+
+            if (seleccionada.Descripcion == "")
+            {
+                MessageBox.Show("Ingrese descripcion para modificar");
+                return;
+            }
+
+            if (negocio.existeCategoria(tbDescripcionCat.Text.Trim()))
+            {
+                MessageBox.Show("La categoria ya existe;");
+                return;
+            }
+
+            negocio.modificar(seleccionada);
+            cargar();
+            tbDescripcionCat.Clear();
         }
     }
 }

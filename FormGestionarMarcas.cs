@@ -64,7 +64,7 @@ namespace TP_GestionArticulos
             string descripcion=txtDescripcion.Text.Trim();
             if (descripcion == "")
             {
-                MessageBox.Show("Ingrese una descrpción");
+                MessageBox.Show("Ingrese una marca para agregar");
                 return;
             }
 
@@ -93,6 +93,20 @@ namespace TP_GestionArticulos
         {
             Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
             seleccionada.Descripcion= txtDescripcion.Text.Trim();
+
+            
+            if (seleccionada.Descripcion == "")
+            {
+                MessageBox.Show("Ingrese una Marca en descripcion");
+                return;
+            }
+
+            if (negocio.existeMarca(txtDescripcion.Text.Trim()))
+            {
+                MessageBox.Show("La marca ya existe;");
+                return;
+            }
+
             negocio.modificar(seleccionada);
             cargar();
             txtDescripcion.Clear();
