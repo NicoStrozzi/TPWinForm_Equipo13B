@@ -38,9 +38,6 @@
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.cboCampo = new System.Windows.Forms.ComboBox();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,7 +67,8 @@
             this.gbFiltrosAvanzados.Controls.Add(this.txtFiltro);
             this.gbFiltrosAvanzados.Controls.Add(this.cboCriterio);
             this.gbFiltrosAvanzados.Controls.Add(this.cboCampo);
-            this.gbFiltrosAvanzados.Location = new System.Drawing.Point(159, 133);
+            this.gbFiltrosAvanzados.Controls.Add(this.btnDetalle);
+            this.gbFiltrosAvanzados.Location = new System.Drawing.Point(39, 94);
             this.gbFiltrosAvanzados.Name = "gbFiltrosAvanzados";
             this.gbFiltrosAvanzados.Size = new System.Drawing.Size(656, 95);
             this.gbFiltrosAvanzados.TabIndex = 0;
@@ -85,7 +83,6 @@
             this.lblFiltro.Size = new System.Drawing.Size(29, 13);
             this.lblFiltro.TabIndex = 7;
             this.lblFiltro.Text = "Filtro";
-            this.lblFiltro.Click += new System.EventHandler(this.lblValor_Click);
             // 
             // lblCriterio
             // 
@@ -147,7 +144,7 @@
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.Window;
-            this.dgvArticulos.Location = new System.Drawing.Point(159, 233);
+            this.dgvArticulos.Location = new System.Drawing.Point(39, 195);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
@@ -155,67 +152,29 @@
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(656, 250);
             this.dgvArticulos.TabIndex = 1;
-            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged_1);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnAgregar.Location = new System.Drawing.Point(19, 233);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(113, 49);
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnModificar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnModificar.Location = new System.Drawing.Point(19, 298);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(113, 49);
-            this.btnModificar.TabIndex = 3;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnEliminar.Location = new System.Drawing.Point(19, 368);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(113, 49);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnDetalle
             // 
             this.btnDetalle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDetalle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnDetalle.Location = new System.Drawing.Point(19, 437);
+            this.btnDetalle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDetalle.Location = new System.Drawing.Point(510, 25);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(113, 46);
+            this.btnDetalle.Size = new System.Drawing.Size(111, 38);
             this.btnDetalle.TabIndex = 5;
-            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.Text = "Detalle Articulo";
             this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // pbImagen
             // 
             this.pbImagen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbImagen.Location = new System.Drawing.Point(836, 233);
+            this.pbImagen.Location = new System.Drawing.Point(716, 194);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(291, 250);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagen.TabIndex = 7;
             this.pbImagen.TabStop = false;
-            this.pbImagen.Click += new System.EventHandler(this.pbImagen_Click);
             // 
             // panel1
             // 
@@ -225,7 +184,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(159, 12);
+            this.panel1.Location = new System.Drawing.Point(39, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 49);
             this.panel1.TabIndex = 8;
@@ -240,13 +199,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestion de articulos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // gbBusqueda
             // 
             this.gbBusqueda.Controls.Add(this.btBuscarARticulos);
             this.gbBusqueda.Controls.Add(this.txtBuscarArticulos);
-            this.gbBusqueda.Location = new System.Drawing.Point(836, 133);
+            this.gbBusqueda.Location = new System.Drawing.Point(716, 94);
             this.gbBusqueda.Name = "gbBusqueda";
             this.gbBusqueda.Size = new System.Drawing.Size(292, 94);
             this.gbBusqueda.TabIndex = 9;
@@ -281,50 +239,55 @@
             // 
             // btnGestionMarcas
             // 
-            this.btnGestionMarcas.Location = new System.Drawing.Point(331, 86);
+            this.btnGestionMarcas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGestionMarcas.Location = new System.Drawing.Point(211, 465);
             this.btnGestionMarcas.Name = "btnGestionMarcas";
             this.btnGestionMarcas.Size = new System.Drawing.Size(111, 38);
             this.btnGestionMarcas.TabIndex = 10;
             this.btnGestionMarcas.Text = "Gestionar Marcas";
-            this.btnGestionMarcas.UseVisualStyleBackColor = true;
+            this.btnGestionMarcas.UseVisualStyleBackColor = false;
             this.btnGestionMarcas.Click += new System.EventHandler(this.btnGestionMarcas_Click);
             // 
             // btnGestionDeImagen
             // 
-            this.btnGestionDeImagen.Location = new System.Drawing.Point(704, 86);
+            this.btnGestionDeImagen.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGestionDeImagen.Location = new System.Drawing.Point(584, 465);
             this.btnGestionDeImagen.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionDeImagen.Name = "btnGestionDeImagen";
             this.btnGestionDeImagen.Size = new System.Drawing.Size(111, 38);
             this.btnGestionDeImagen.TabIndex = 11;
             this.btnGestionDeImagen.Text = "Gestionar Imagenes";
-            this.btnGestionDeImagen.UseVisualStyleBackColor = true;
+            this.btnGestionDeImagen.UseVisualStyleBackColor = false;
             this.btnGestionDeImagen.Click += new System.EventHandler(this.btnGestionDeImagen_Click);
             // 
             // btnCategoria
             // 
-            this.btnCategoria.Location = new System.Drawing.Point(505, 86);
+            this.btnCategoria.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCategoria.Location = new System.Drawing.Point(399, 465);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(111, 38);
             this.btnCategoria.TabIndex = 12;
             this.btnCategoria.Text = "Gestionar Categoria";
-            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.UseVisualStyleBackColor = false;
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // btnGestionarArticulos
             // 
-            this.btnGestionarArticulos.Location = new System.Drawing.Point(159, 86);
+            this.btnGestionarArticulos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGestionarArticulos.Location = new System.Drawing.Point(39, 465);
             this.btnGestionarArticulos.Name = "btnGestionarArticulos";
             this.btnGestionarArticulos.Size = new System.Drawing.Size(111, 38);
             this.btnGestionarArticulos.TabIndex = 13;
             this.btnGestionarArticulos.Text = "Gestionar Articulos";
-            this.btnGestionarArticulos.UseVisualStyleBackColor = true;
+            this.btnGestionarArticulos.UseVisualStyleBackColor = false;
+            this.btnGestionarArticulos.Click += new System.EventHandler(this.btnGestionarArticulos_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1146, 530);
+            this.ClientSize = new System.Drawing.Size(1047, 527);
             this.Controls.Add(this.btnGestionarArticulos);
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnGestionDeImagen);
@@ -333,10 +296,6 @@
             this.Controls.Add(this.gbFiltrosAvanzados);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbImagen);
-            this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -362,9 +321,6 @@
         private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.ComboBox cboCampo;
         private System.Windows.Forms.DataGridView dgvArticulos;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.Label lblFiltro;

@@ -18,7 +18,7 @@ namespace TP_GestionArticulos
         public FormPrincipal()
         {
             InitializeComponent();
-
+   
            //ToolTip ttBuscar = new ToolTip();
            //ttBuscar.SetToolTip(txtBuscarArticulos, "Ingrese primeros caracteres para buscar articulos en los campos Codigo y Nombre");
         }
@@ -104,10 +104,7 @@ namespace TP_GestionArticulos
             
         }
 
-        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -130,21 +127,6 @@ namespace TP_GestionArticulos
 
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbImagen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblValor_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
@@ -209,8 +191,7 @@ namespace TP_GestionArticulos
         {
             bool hayArticulos = lista != null && lista.Count > 0;
 
-            btnModificar.Enabled = hayArticulos;
-            btnEliminar.Enabled = hayArticulos;
+         
             btnDetalle.Enabled = hayArticulos;
             btnBuscar.Enabled = hayArticulos;
             btBuscarARticulos.Enabled = hayArticulos;
@@ -219,8 +200,7 @@ namespace TP_GestionArticulos
         {
             bool hayFilas = dgv != null && dgv.Rows.Count > 0;
 
-            btnModificar.Enabled = hayFilas;
-            btnEliminar.Enabled = hayFilas;
+           
             btnDetalle.Enabled = hayFilas;
         }
 
@@ -290,6 +270,13 @@ namespace TP_GestionArticulos
         {
             FormGestionCategoria GestionarCategoria = new FormGestionCategoria();
             GestionarCategoria.ShowDialog();
+        }
+
+        private void btnGestionarArticulos_Click(object sender, EventArgs e)
+        {
+            FormGestionarArticulos GestionarArticulos = new FormGestionarArticulos();
+            GestionarArticulos.ShowDialog();
+            cargar();
         }
     }
 }

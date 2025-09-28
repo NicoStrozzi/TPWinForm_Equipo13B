@@ -100,6 +100,9 @@
     <EmbeddedResource Include="FormAgregarImagen.resx">
       <DependentUpon>FormAgregarImagen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionarArticulos.resx">
+      <DependentUpon>FormGestionarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGestionarMarcas.resx">
       <DependentUpon>FormGestionarMarcas.cs</DependentUpon>
     </EmbeddedResource>
