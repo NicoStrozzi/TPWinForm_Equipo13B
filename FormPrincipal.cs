@@ -103,9 +103,6 @@ namespace TP_GestionArticulos
             }
             
         }
-
-       
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio=new ArticuloNegocio();
@@ -223,8 +220,6 @@ namespace TP_GestionArticulos
 
                 MessageBox.Show(ex.ToString());
             }
-            
-
         }
 
         private void btBuscarARticulos_Click(object sender, EventArgs e)
@@ -247,12 +242,6 @@ namespace TP_GestionArticulos
 
             actualizarBotonesSegunGrilla(dgvArticulos);
         }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
         private void btnGestionMarcas_Click(object sender, EventArgs e)
         {
             FormGestionarMarcas GestionarMarcas = new FormGestionarMarcas();

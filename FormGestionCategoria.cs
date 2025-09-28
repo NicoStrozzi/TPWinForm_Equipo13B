@@ -77,10 +77,7 @@ namespace TP_GestionArticulos
             }
         }
 
-        private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void btnModificarCategoria_Click(object sender, EventArgs e)
         {

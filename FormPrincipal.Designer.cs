@@ -41,7 +41,7 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
             this.btBuscarARticulos = new System.Windows.Forms.Button();
             this.txtBuscarArticulos = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@
             this.btnGestionDeImagen = new System.Windows.Forms.Button();
             this.btnCategoria = new System.Windows.Forms.Button();
             this.btnGestionarArticulos = new System.Windows.Forms.Button();
+            this.ttipDetalleArticulo = new System.Windows.Forms.ToolTip(this.components);
             this.gbFiltrosAvanzados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -67,10 +68,9 @@
             this.gbFiltrosAvanzados.Controls.Add(this.txtFiltro);
             this.gbFiltrosAvanzados.Controls.Add(this.cboCriterio);
             this.gbFiltrosAvanzados.Controls.Add(this.cboCampo);
-            this.gbFiltrosAvanzados.Controls.Add(this.btnDetalle);
             this.gbFiltrosAvanzados.Location = new System.Drawing.Point(39, 94);
             this.gbFiltrosAvanzados.Name = "gbFiltrosAvanzados";
-            this.gbFiltrosAvanzados.Size = new System.Drawing.Size(656, 95);
+            this.gbFiltrosAvanzados.Size = new System.Drawing.Size(489, 95);
             this.gbFiltrosAvanzados.TabIndex = 0;
             this.gbFiltrosAvanzados.TabStop = false;
             this.gbFiltrosAvanzados.Text = "Filtrar Articulos";
@@ -104,12 +104,13 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnBuscar.Location = new System.Drawing.Point(396, 40);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Aplicar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtFiltro
@@ -158,11 +159,12 @@
             // 
             this.btnDetalle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDetalle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnDetalle.Location = new System.Drawing.Point(510, 25);
+            this.btnDetalle.Location = new System.Drawing.Point(584, 151);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(111, 38);
             this.btnDetalle.TabIndex = 5;
             this.btnDetalle.Text = "Detalle Articulo";
+            this.ttipDetalleArticulo.SetToolTip(this.btnDetalle, "Seleccione un articulo de la grilla para ver detalles\r\n");
             this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
@@ -181,24 +183,24 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lbTitulo);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(39, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 49);
+            this.panel1.Size = new System.Drawing.Size(968, 50);
             this.panel1.TabIndex = 8;
             // 
-            // label1
+            // lbTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(204, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestion de articulos";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(354, 11);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(232, 25);
+            this.lbTitulo.TabIndex = 0;
+            this.lbTitulo.Text = "Gestion de articulos";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gbBusqueda
             // 
@@ -206,19 +208,20 @@
             this.gbBusqueda.Controls.Add(this.txtBuscarArticulos);
             this.gbBusqueda.Location = new System.Drawing.Point(716, 94);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(292, 94);
+            this.gbBusqueda.Size = new System.Drawing.Size(291, 95);
             this.gbBusqueda.TabIndex = 9;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Buscar Articulos";
             // 
             // btBuscarARticulos
             // 
+            this.btBuscarARticulos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btBuscarARticulos.Location = new System.Drawing.Point(190, 44);
             this.btBuscarARticulos.Name = "btBuscarARticulos";
             this.btBuscarARticulos.Size = new System.Drawing.Size(75, 23);
             this.btBuscarARticulos.TabIndex = 8;
             this.btBuscarARticulos.Text = "Buscar";
-            this.btBuscarARticulos.UseVisualStyleBackColor = true;
+            this.btBuscarARticulos.UseVisualStyleBackColor = false;
             this.btBuscarARticulos.Click += new System.EventHandler(this.btBuscarARticulos_Click);
             // 
             // txtBuscarArticulos
@@ -295,6 +298,7 @@
             this.Controls.Add(this.gbBusqueda);
             this.Controls.Add(this.gbFiltrosAvanzados);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "FormPrincipal";
@@ -327,7 +331,7 @@
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.Label lblCampo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.GroupBox gbBusqueda;
         private System.Windows.Forms.Button btBuscarARticulos;
         private System.Windows.Forms.TextBox txtBuscarArticulos;
@@ -336,6 +340,7 @@
         private System.Windows.Forms.Button btnGestionDeImagen;
         private System.Windows.Forms.Button btnCategoria;
         private System.Windows.Forms.Button btnGestionarArticulos;
+        private System.Windows.Forms.ToolTip ttipDetalleArticulo;
     }
 }
 

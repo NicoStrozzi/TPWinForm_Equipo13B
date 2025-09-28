@@ -46,7 +46,7 @@
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.Size = new System.Drawing.Size(407, 209);
             this.dgvCategoria.TabIndex = 0;
-            this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
+           
             // 
             // btnAgregarCategoria
             // 
