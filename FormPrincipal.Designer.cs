@@ -142,6 +142,7 @@
             // dgvArticulos
             // 
             this.dgvArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.Window;
@@ -158,7 +159,7 @@
             // btnDetalle
             // 
             this.btnDetalle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDetalle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDetalle.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnDetalle.Location = new System.Drawing.Point(584, 151);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(111, 38);
@@ -167,6 +168,8 @@
             this.ttipDetalleArticulo.SetToolTip(this.btnDetalle, "Seleccione un articulo de la grilla para ver detalles\r\n");
             this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            this.btnDetalle.MouseLeave += new System.EventHandler(this.btnDetalle_MouseLeave);
+            this.btnDetalle.MouseHover += new System.EventHandler(this.btnDetalle_MouseHover);
             // 
             // pbImagen
             // 

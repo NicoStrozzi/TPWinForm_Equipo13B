@@ -267,5 +267,15 @@ namespace TP_GestionArticulos
             GestionarArticulos.ShowDialog();
             cargar();
         }
+
+        private void btnDetalle_MouseHover(object sender, EventArgs e)
+        {
+            btnDetalle.BackColor = System.Drawing.Color.LightGray;
+        }
+
+        private void btnDetalle_MouseLeave(object sender, EventArgs e)
+        {
+            btnDetalle.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        }
     }
 }
